@@ -1,0 +1,16 @@
+# ВНУТРЕННИЕ МАТЕРИАЛЫ — НЕ ПУБЛИКОВАТЬ (стратегия, цены, расшифровки)
+SPEC.md
+product-description*.md
+event-content.md
+event-readiness.md
+project-idea-template.md
+ui-ux-brief-template.md
+landing-copywriter-prompt.md
+*.docx
+*_transcript.txt
+dash_transcript.txt
+
+# системное
+.DS_Store
+Thumbs.db
+desktop.ini
