@@ -6,6 +6,25 @@
 <title>DGAI — Retention CRM для казино</title>
 <meta name="description" content="AI-CRM, которая принимает решение по каждому игроку отдельно — кого удержать, кого реактивировать. ML, а не LLM.">
 
+<!-- favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2316f2a8'/%3E%3Cstop offset='1' stop-color='%2321d4fd'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23070a0f'/%3E%3Ccircle cx='16' cy='16' r='7' fill='url(%23g)'/%3E%3C/svg%3E">
+
+<!-- шрифт Inter -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Open Graph / превью ссылки -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="DGAI — Retention CRM для казино">
+<meta property="og:description" content="Персональный retention на анализе каждого игрока. ML, а не LLM. Real-time скоринг для casino.">
+<meta property="og:image" content="https://dgai-max-s-projects321.vercel.app/og.png">
+<meta property="og:url" content="https://dgai-max-s-projects321.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DGAI — Retention CRM для казино">
+<meta name="twitter:description" content="Персональный retention на анализе каждого игрока. ML, а не LLM.">
+<meta name="twitter:image" content="https://dgai-max-s-projects321.vercel.app/og.png">
+
 <!-- ============================================================= -->
 <!--  CONFIG · ЗАПОЛНИ ЭТОТ БЛОК ПЕРЕД ПУБЛИКАЦИЕЙ                   -->
 <!--  Всё клиентское меняется здесь.                                -->
@@ -69,7 +88,7 @@
   }
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--maxw);margin:0 auto;padding-left:24px;padding-right:24px}
-  section{padding:96px 0;position:relative}
+  section{padding:112px 0;position:relative}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
@@ -79,9 +98,10 @@
     padding:6px 14px;border-radius:100px;margin-bottom:20px;
   }
   .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
-  h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:700}
-  h2{font-size:clamp(28px,4vw,44px);margin-bottom:16px}
-  .lead{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:620px}
+  h1,h2,h3{line-height:1.1;letter-spacing:-.025em;font-weight:700}
+  h1{font-weight:800}
+  h2{font-size:clamp(30px,4.2vw,46px);margin-bottom:18px}
+  .lead{font-size:clamp(16px,2vw,19px);line-height:1.65;color:var(--muted);max-width:620px}
   .grad{background:linear-gradient(100deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* кнопки */
@@ -126,8 +146,17 @@
   .mobile-menu{display:none}
 
   /* ---------- hero ---------- */
-  .hero{padding-top:84px;padding-bottom:64px;text-align:center}
-  .hero h1{font-size:clamp(34px,6vw,68px);max-width:920px;margin:0 auto 22px}
+  .hero{padding-top:84px;padding-bottom:72px;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+  .hero h1{font-size:clamp(36px,6.2vw,74px);max-width:960px;margin:0 auto 22px}
+  /* живой градиент-фон hero */
+  .hero-aurora{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+  .hero-aurora i{position:absolute;border-radius:50%;filter:blur(72px);opacity:.55}
+  .hero-aurora i:nth-child(1){width:46vw;max-width:560px;aspect-ratio:1;background:radial-gradient(circle,rgba(22,242,168,.55),transparent 70%);top:-12%;left:2%;animation:auroraA 15s ease-in-out infinite}
+  .hero-aurora i:nth-child(2){width:48vw;max-width:600px;aspect-ratio:1;background:radial-gradient(circle,rgba(33,212,253,.5),transparent 70%);top:-8%;right:-4%;animation:auroraB 18s ease-in-out infinite}
+  .hero-aurora i:nth-child(3){width:40vw;max-width:480px;aspect-ratio:1;background:radial-gradient(circle,rgba(33,212,253,.28),transparent 70%);bottom:-20%;left:34%;animation:auroraA 21s ease-in-out infinite reverse}
+  @keyframes auroraA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(38px,28px) scale(1.08)}}
+  @keyframes auroraB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-42px,22px) scale(1.06)}}
+  @media(prefers-reduced-motion:reduce){.hero-aurora i{animation:none}}
   .hero .lead{margin:0 auto 36px;max-width:680px;font-size:clamp(17px,2.2vw,21px)}
   .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
   .hero-note{margin-top:22px;color:var(--muted-2);font-size:14px}
@@ -145,7 +174,7 @@
   .stat .lbl{color:var(--muted);font-size:13.5px;margin-top:6px}
 
   /* ---------- section head ---------- */
-  .sec-head{max-width:680px;margin-bottom:54px}
+  .sec-head{max-width:680px;margin-bottom:60px}
   .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
 
   /* ---------- cards grid ---------- */
@@ -300,6 +329,33 @@
   .live-points{display:grid;gap:16px}
   .live-points .feature{background:rgba(255,255,255,.02)}
 
+  /* ---------- dashboard mock ---------- */
+  .dash{max-width:980px;margin:0 auto;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,var(--panel),var(--bg-2));box-shadow:var(--shadow)}
+  .dash-bar{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .dash-bar .d{width:11px;height:11px;border-radius:50%;background:var(--muted-2);opacity:.5}
+  .dash-bar .url{margin-left:12px;font-size:12px;color:var(--muted-2);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:7px;padding:4px 14px}
+  .dash-body{padding:22px;display:grid;gap:16px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.02)}
+  .kpi .k-lbl{font-size:12px;color:var(--muted)}
+  .kpi .k-num{font-size:23px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+  .kpi .k-delta{font-size:12px;margin-top:3px;color:var(--accent)}
+  .kpi .k-delta.down{color:var(--warn)}
+  .dash-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+  .panelbox{border:1px solid var(--line);border-radius:12px;padding:16px;background:rgba(255,255,255,.015)}
+  .panelbox h4{font-size:13px;color:var(--muted);font-weight:600;margin-bottom:14px}
+  .chart{display:flex;align-items:flex-end;gap:6px;height:118px}
+  .chart .bar{flex:1;border-radius:5px 5px 0 0;background:linear-gradient(180deg,var(--accent),rgba(33,212,253,.25));min-height:6px}
+  .segs{display:grid;gap:12px}
+  .seg .s-top{display:flex;justify-content:space-between;font-size:12.5px;color:var(--muted);margin-bottom:6px}
+  .seg .s-track{height:8px;border-radius:6px;background:rgba(255,255,255,.06);overflow:hidden}
+  .seg .s-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+
+  /* sparkline в live-карточке */
+  .live-spark{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:rgba(255,255,255,.02)}
+  .live-spark span{display:block;font-size:11.5px;color:var(--muted);margin-bottom:5px}
+  .live-spark svg{width:100%;height:34px;display:block}
+
   /* reveal animation — спрятано только если JS включён (без JS контент виден) */
   .reveal{transition:opacity .7s ease,transform .7s ease}
   .js .reveal{opacity:0;transform:translateY(24px)}
@@ -320,7 +376,7 @@
     .mobile-menu .btn{margin-top:14px}
   }
   @media(max-width:920px){
-    .ml,.cta-wrap,.live-wrap{grid-template-columns:1fr}
+    .ml,.cta-wrap,.live-wrap,.dash-grid{grid-template-columns:1fr}
     .cta-form{border-left:none;border-top:1px solid var(--line)}
     .stats-strip{grid-template-columns:repeat(2,1fr)}
     .grid-3,.steps{grid-template-columns:1fr 1fr}
@@ -330,6 +386,7 @@
     .hero{padding-top:56px}
     .nav-cta .btn-primary{display:none}
     .grid-3,.grid-2,.steps{grid-template-columns:1fr}
+    .kpis{grid-template-columns:repeat(2,1fr)}
     .stats-strip{grid-template-columns:1fr 1fr}
     .compare-row{grid-template-columns:1fr}
     .compare-row > div{border-bottom:1px solid var(--line)}
@@ -383,6 +440,7 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero wrap">
+  <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <span class="eyebrow" data-en="Retention CRM · Casino">Retention CRM · Казино</span>
   <h1 data-en="Personal retention built on the analysis of <span class='grad'>every player</span> — not cohort blasts">Персональный retention на анализе <span class="grad">каждого игрока</span> — а не рассылки по когортам</h1>
   <p class="lead" data-en="An AI CRM that scores churn risk and value for every player on ML and your own data — and tells you who to retain and who to reactivate. No LLM hallucinations that break payback.">AI-CRM, которая скорит риск оттока и ценность каждого игрока на ML и ваших данных — и говорит, кого удержать, а кого реактивировать. Без LLM-галлюцинаций, которые ломают payback.</p>
@@ -396,6 +454,56 @@
     <div class="stat"><div class="num">8</div><div class="lbl" data-en="forecast horizons: 1–120 days">горизонтов прогноза: 1–120 дней</div></div>
     <div class="stat"><div class="num">ML</div><div class="lbl" data-en="not LLM for decisions">а не LLM в принятии решений</div></div>
     <div class="stat"><div class="num g num-sm" data-en="All in one place">Всё в одном месте</div><div class="lbl" data-en="analytics, scoring and retention in one product">аналитика, скоринг и retention в одном продукте</div></div>
+  </div>
+</section>
+
+<!-- ===================== DASHBOARD MOCK ===================== -->
+<section class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow" data-en="Operator dashboard">Дашборд оператора</span>
+    <h2 data-en="The whole casino on one screen">Всё казино — на одном экране</h2>
+  </div>
+  <div class="dash reveal">
+    <div class="dash-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="url" data-en="dgai · casino overview">dgai · обзор казино</span></div>
+    <div class="dash-body">
+      <div class="kpis">
+        <div class="kpi"><div class="k-lbl" data-en="Players">Игроки</div><div class="k-num">12 480</div><div class="k-delta" data-en="+6.2% / week">+6,2% / нед</div></div>
+        <div class="kpi"><div class="k-lbl" data-en="Deposits (30d)">Депозиты (30д)</div><div class="k-num">$418K</div><div class="k-delta" data-en="+11%">+11%</div></div>
+        <div class="kpi"><div class="k-lbl" data-en="At risk">Под риском</div><div class="k-num">326</div><div class="k-delta down" data-en="needs action">требуют действий</div></div>
+        <div class="kpi"><div class="k-lbl" data-en="Retained (30d)">Удержано (30д)</div><div class="k-num">71%</div><div class="k-delta" data-en="+9 pp">+9 п.п.</div></div>
+      </div>
+      <div class="dash-grid">
+        <div class="panelbox">
+          <h4 data-en="Deposits, last 14 days">Депозиты, 14 дней</h4>
+          <div class="chart">
+            <div class="bar" style="height:38%"></div>
+            <div class="bar" style="height:52%"></div>
+            <div class="bar" style="height:45%"></div>
+            <div class="bar" style="height:63%"></div>
+            <div class="bar" style="height:58%"></div>
+            <div class="bar" style="height:71%"></div>
+            <div class="bar" style="height:66%"></div>
+            <div class="bar" style="height:80%"></div>
+            <div class="bar" style="height:74%"></div>
+            <div class="bar" style="height:88%"></div>
+            <div class="bar" style="height:82%"></div>
+            <div class="bar" style="height:95%"></div>
+            <div class="bar" style="height:90%"></div>
+            <div class="bar" style="height:100%"></div>
+          </div>
+        </div>
+        <div class="panelbox">
+          <h4 data-en="Player segments">Сегменты игроков</h4>
+          <div class="segs">
+            <div class="seg"><div class="s-top"><span data-en="VIP / pre-VIP">VIP / pre-VIP</span><span>8%</span></div><div class="s-track"><div class="s-fill" style="width:8%"></div></div></div>
+            <div class="seg"><div class="s-top"><span data-en="Active">Активные</span><span>54%</span></div><div class="s-track"><div class="s-fill" style="width:54%"></div></div></div>
+            <div class="seg"><div class="s-top"><span data-en="At risk">Под риском</span><span>17%</span></div><div class="s-track"><div class="s-fill" style="width:17%"></div></div></div>
+            <div class="seg"><div class="s-top"><span data-en="Churned">Отток</span><span>21%</span></div><div class="s-track"><div class="s-fill" style="width:21%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="live-note" data-en="UI example — sample data">Пример интерфейса — демо-данные</div>
+    </div>
   </div>
 </section>
 
@@ -483,6 +591,12 @@
         <div data-en="<span>Spins this session</span><b>6</b>"><span>Спинов в сессии</span><b>6</b></div>
         <div data-en="<span>Session balance</span><b class='neg'>−$240</b>"><span>Баланс сессии</span><b class="neg">−$240</b></div>
         <div data-en="<span>Churn risk</span><b class='warn-t'>High</b>"><span>Риск оттока</span><b class="warn-t">Высокий</b></div>
+      </div>
+      <div class="live-spark">
+        <span data-en="Session balance, last 30 min">Баланс сессии, 30 мин</span>
+        <svg viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+          <polyline points="0,7 11,9 22,6 33,12 44,10 55,16 66,15 77,20 88,19 99,25 110,27 120,30" fill="none" stroke="#ff5d6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+        </svg>
       </div>
       <div class="live-rec">
         <span data-en="⚡ Model recommendation">⚡ Рекомендация модели</span>
