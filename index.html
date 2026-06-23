@@ -1162,6 +1162,16 @@
     document.querySelectorAll('a[href="#demo"]').forEach(function(a){ a.addEventListener('click', openCal); });
   })();
 
+  // --- все CTA "Записаться на демо" ведут в Telegram (если не задан Calendly) ---
+  if(cfg.telegram && !cfg.calendly){
+    document.querySelectorAll('a[href="#demo"]').forEach(function(a){
+      a.setAttribute('data-cta','demo');
+      a.setAttribute('href','https://t.me/'+cfg.telegram);
+      a.setAttribute('target','_blank');
+      a.setAttribute('rel','noopener');
+    });
+  }
+
   // --- analytics helpers (Microsoft Clarity custom events + tags) ---
   function clr(){ if(window.clarity){ try{ window.clarity.apply(null, arguments); }catch(e){} } }
   function track(name, props){
@@ -1196,7 +1206,7 @@
     document.addEventListener('click', function(e){
       var a = e.target.closest && e.target.closest('a,button'); if(!a) return;
       var href = a.getAttribute('href') || '';
-      if(href.indexOf('#demo') !== -1){
+      if(href.indexOf('#demo') !== -1 || a.getAttribute('data-cta') === 'demo'){
         var loc = a.closest('header') ? 'nav' : a.closest('footer') ? 'footer' : a.closest('.sticky-cta') ? 'sticky' : 'page';
         track('cta_demo_click', {cta_location: loc});
       }
