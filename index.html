@@ -42,16 +42,13 @@
   };
 </script>
 
-<!-- Microsoft Clarity (аналитика) - грузится только после согласия на cookie -->
+<!-- Microsoft Clarity (аналитика) -->
 <script type="text/javascript">
-  window.__loadClarity = function(){
-    if(window.__clarityLoaded) return; window.__clarityLoaded = true;
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xbhw0ezrk7");
-  };
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "xbhw0ezrk7");
 </script>
 
 <style>
@@ -333,20 +330,6 @@
   .foot-legal{display:flex;gap:22px;flex-wrap:wrap;font-size:13px}
   .foot-legal a{color:rgba(243,240,238,.6)}
   .foot-legal a:hover{color:var(--on-ink)}
-
-  /* ---------- cookie consent ---------- */
-  .cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:600px;margin:0 auto;
-    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,.16);
-    padding:18px 20px;display:none;align-items:center;gap:16px;flex-wrap:wrap}
-  .cookie.show{display:flex}
-  .cookie p{font-size:13.5px;color:var(--muted);line-height:1.45;flex:1;min-width:220px;margin:0}
-  .cookie a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
-  .cookie-actions{display:flex;gap:10px;flex:none}
-  .cookie .btn{padding:9px 20px;font-size:14px}
-  .cookie .btn-accept{background:var(--accent);border-color:var(--accent);color:#fff}
-  .cookie .btn-accept:hover{background:#b53c00;border-color:#b53c00;transform:none}
-  .cookie .btn-decline{background:#fff;border-color:var(--line);color:var(--muted)}
-  .cookie .btn-decline:hover{background:var(--bg);transform:none}
 
   /* ---------- sticky mobile CTA ---------- */
   .sticky-cta{position:fixed;left:14px;right:14px;bottom:14px;z-index:55;display:none}
@@ -1006,15 +989,6 @@
 <!-- ===================== STICKY MOBILE CTA ===================== -->
 <div class="sticky-cta" id="stickyCta"><a href="#demo" class="btn btn-primary" data-en="Book a demo">Записаться на демо</a></div>
 
-<!-- ===================== COOKIE CONSENT ===================== -->
-<div class="cookie" id="cookieBanner">
-  <p data-en="We use cookies and analytics (Microsoft Clarity) to improve the site. Details in our <a href='/privacy.html#cookies'>Privacy Policy</a>.">Мы используем cookie и аналитику (Microsoft Clarity), чтобы улучшать сайт. Подробнее - в <a href="/privacy.html#cookies">Политике конфиденциальности</a>.</p>
-  <div class="cookie-actions">
-    <button class="btn btn-decline" id="cookieDecline" type="button" data-en="Decline">Отклонить</button>
-    <button class="btn btn-accept" id="cookieAccept" type="button" data-en="Accept">Принять</button>
-  </div>
-</div>
-
 <script>
 (function(){
   // включаем скрытое стартовое состояние анимаций только если JS работает
@@ -1113,6 +1087,7 @@
       showMsg('err','Заполните имя, бренд и Telegram.','Please fill in name, brand and Telegram.');
       return;
     }
+    track('form_submit');
 
     if(cfg.formEndpoint){
       var btn = form.querySelector('button[type=submit]');
@@ -1125,6 +1100,7 @@
         if(r.ok){
           form.reset();
           showMsg('ok','Заявка отправлена! Свяжемся с вами в ближайшее время.','Request sent! We will get back to you shortly.');
+          track('lead_submitted'); clr('set','is_lead','yes'); clr('upgrade','lead');
         } else {
           showMsg('err','Не удалось отправить. Напишите нам в Telegram.','Could not send. Please message us on Telegram.');
         }
@@ -1139,6 +1115,7 @@
       var txt = 'Demo request:\nName: '+data.name+'\nBrand: '+data.brand+'\nTelegram: '+data.telegram+'\nMessage: '+(data.message||'-');
       try{ navigator.clipboard && navigator.clipboard.writeText(txt); }catch(err){}
       window.open('https://t.me/'+cfg.telegram, '_blank');
+      track('telegram_lead_open');
     } else {
       showMsg('err','Форма не настроена: задайте formEndpoint или telegram в CONFIG.','Form not configured: set formEndpoint or telegram in CONFIG.');
     }
@@ -1148,18 +1125,86 @@
   var yEl = document.getElementById('year'); if(yEl){ yEl.textContent = new Date().getFullYear(); }
   if(cfg.telegram){ document.querySelectorAll('[data-tg]').forEach(function(a){ a.href = 'https://t.me/' + cfg.telegram; }); }
 
-  // --- cookie consent + analytics gating ---
+  // --- analytics helpers (Microsoft Clarity custom events + tags) ---
+  function clr(){ if(window.clarity){ try{ window.clarity.apply(null, arguments); }catch(e){} } }
+  function track(name, props){
+    clr('event', name);
+    if(props){ for(var k in props){ if(Object.prototype.hasOwnProperty.call(props,k)) clr('set', k, String(props[k])); } }
+  }
+
+  // --- first-party enrichment: who/where/what ---
   (function(){
-    var KEY = 'cookieConsent';
-    var banner = document.getElementById('cookieBanner');
-    var saved = null; try{ saved = localStorage.getItem(KEY); }catch(e){}
-    function close(){ if(banner) banner.classList.remove('show'); window.dispatchEvent(new Event('cookiechange')); }
-    function accept(){ try{ localStorage.setItem(KEY,'accepted'); }catch(e){} if(window.__loadClarity) window.__loadClarity(); close(); }
-    function decline(){ try{ localStorage.setItem(KEY,'declined'); }catch(e){} close(); }
-    if(saved === 'accepted'){ if(window.__loadClarity) window.__loadClarity(); }
-    else if(saved !== 'declined' && banner){ banner.classList.add('show'); }
-    var a = document.getElementById('cookieAccept'); if(a) a.addEventListener('click', accept);
-    var d = document.getElementById('cookieDecline'); if(d) d.addEventListener('click', decline);
+    // returning-visitor id + visit count (узнаём повторных)
+    var vid, visits=1;
+    try{
+      vid = localStorage.getItem('rv_vid');
+      if(!vid){ vid = 'v'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); localStorage.setItem('rv_vid', vid); }
+      visits = (parseInt(localStorage.getItem('rv_visits')||'0',10)||0) + 1;
+      localStorage.setItem('rv_visits', String(visits));
+    }catch(e){}
+    if(vid) clr('identify', vid);
+    clr('set','visit_number', String(visits));
+    clr('set','returning', visits>1 ? 'yes' : 'no');
+
+    // источник трафика: UTM + реферер + язык
+    try{
+      var p = new URLSearchParams(location.search);
+      ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){ var v=p.get(k); if(v) clr('set', k, v); });
+      var ref = document.referrer || '';
+      clr('set','referrer_host', ref ? (new URL(ref).hostname) : 'direct');
+    }catch(e){}
+    clr('set','landing_lang', document.documentElement.lang || 'ru');
+
+    // клики: CTA / telegram / правовое
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a,button'); if(!a) return;
+      var href = a.getAttribute('href') || '';
+      if(href.indexOf('#demo') !== -1){
+        var loc = a.closest('header') ? 'nav' : a.closest('footer') ? 'footer' : a.closest('.sticky-cta') ? 'sticky' : 'page';
+        track('cta_demo_click', {cta_location: loc});
+      }
+      if(href.indexOf('t.me/') !== -1 || a.id === 'tgBtn'){ track('telegram_click'); }
+      if(href.indexOf('privacy.html') !== -1){ track('privacy_click'); }
+      if(href.indexOf('terms.html') !== -1){ track('terms_click'); }
+    }, true);
+
+    // переключение языка
+    document.querySelectorAll('.lang-switch button').forEach(function(b){
+      b.addEventListener('click', function(){ track('lang_switch', {to_lang: b.getAttribute('data-lang')}); });
+    });
+
+    // раскрытие FAQ
+    document.querySelectorAll('.qa-q').forEach(function(q){
+      q.addEventListener('click', function(){
+        var s = q.querySelector('span'); track('faq_open', {question: s ? s.textContent.trim().slice(0,60) : ''});
+      });
+    });
+
+    // воронка формы: первое касание
+    if(form){
+      var started=false;
+      form.addEventListener('focusin', function(){ if(!started){ started=true; track('form_start'); } });
+    }
+
+    // глубина скролла
+    var marks=[25,50,75,100], hit={};
+    window.addEventListener('scroll', function(){
+      var h=document.documentElement, sc=h.scrollTop||document.body.scrollTop, max=h.scrollHeight-h.clientHeight;
+      var pct = max>0 ? Math.round(sc/max*100) : 0;
+      marks.forEach(function(m){ if(pct>=m && !hit[m]){ hit[m]=true; track('scroll_'+m); } });
+    }, {passive:true});
+
+    // просмотры секций
+    if('IntersectionObserver' in window){
+      var seen={};
+      var sio = new IntersectionObserver(function(es){
+        es.forEach(function(en){ if(en.isIntersecting){ var id=en.target.id; if(id && !seen[id]){ seen[id]=true; track('view_'+id); sio.unobserve(en.target);} } });
+      }, {threshold:0.4});
+      document.querySelectorAll('section[id]').forEach(function(s){ sio.observe(s); });
+    }
+
+    // время на странице
+    [15,30,60,120].forEach(function(s){ setTimeout(function(){ track('time_'+s+'s'); }, s*1000); });
   })();
 
   // --- sticky mobile CTA ---
@@ -1167,17 +1212,14 @@
     var el = document.getElementById('stickyCta'); if(!el) return;
     var hero = document.querySelector('.hero');
     var demo = document.getElementById('demo');
-    var cookie = document.getElementById('cookieBanner');
     function upd(){
       var pastHero = hero ? (window.scrollY > hero.offsetTop + hero.offsetHeight - 120) : window.scrollY > 500;
       var demoVisible = false;
       if(demo){ var r = demo.getBoundingClientRect(); demoVisible = r.top < window.innerHeight && r.bottom > 80; }
-      var cookieOpen = cookie && cookie.classList.contains('show');
-      el.classList.toggle('show', pastHero && !demoVisible && !cookieOpen);
+      el.classList.toggle('show', pastHero && !demoVisible);
     }
     window.addEventListener('scroll', upd, {passive:true});
     window.addEventListener('resize', upd);
-    window.addEventListener('cookiechange', upd);
     upd();
   })();
 })();
