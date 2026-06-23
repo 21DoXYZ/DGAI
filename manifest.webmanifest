@@ -1,0 +1,12 @@
+{
+  "name": "Retivo - Retention CRM",
+  "short_name": "Retivo",
+  "description": "AI-CRM с персональным retention для casino. ML, а не LLM.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F0EE",
+  "theme_color": "#F3F0EE",
+  "icons": [
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

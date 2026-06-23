@@ -8,6 +8,10 @@
 
 <!-- favicon -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23141413'/%3E%3Cpath d='M11.5 23.8A9 9 0 1 1 20.5 23.8' fill='none' stroke='%23F3F0EE' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='7' r='2.4' fill='%23CF4500'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="canonical" href="https://retivo.cc/">
+<meta name="theme-color" content="#F3F0EE">
 
 <!-- шрифт Manrope (вариативный, премиальный геометрический гротеск fintech-grade, кириллица) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +42,10 @@
     // Эндпоинт формы. Зарегистрируй бесплатно на https://formspree.io,
     // создай форму, вставь сюда её URL вида https://formspree.io/f/xxxxxxxx
     // Если оставить пустым - форма откроет Telegram.
-    formEndpoint: "https://formspree.io/f/xeewbjzq"
+    formEndpoint: "https://formspree.io/f/xeewbjzq",
+    // Ссылка Calendly/Cal.com для брони демо (напр. https://calendly.com/you/demo).
+    // Пусто = кнопки "Записаться на демо" просто ведут к форме ниже.
+    calendly: ""
   };
 </script>
 
@@ -49,6 +56,18 @@
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "xbhw0ezrk7");
+</script>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Organization", "@id": "https://retivo.cc/#org", "name": "Retivo", "url": "https://retivo.cc/", "logo": "https://retivo.cc/og.png?v=2", "sameAs": ["https://t.me/Moneylong001"] },
+    { "@type": "WebSite", "@id": "https://retivo.cc/#website", "url": "https://retivo.cc/", "name": "Retivo", "inLanguage": "ru", "publisher": { "@id": "https://retivo.cc/#org" } },
+    { "@type": "SoftwareApplication", "name": "Retivo", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://retivo.cc/", "description": "AI-CRM с персональным retention для онлайн-казино: ML-скоринг риска оттока и ценности по каждому игроку, real-time рекомендации офферов." }
+  ]
+}
 </script>
 
 <style>
@@ -891,6 +910,7 @@
       <h3 data-en="Book a demo">Записаться на демо</h3>
       <p class="sub" data-en="Leave your contact - we'll reach out and arrange a slot.">Оставьте контакт - свяжемся и согласуем удобный слот.</p>
       <form id="demoForm" novalidate>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="field">
           <label for="f-name" data-en="Name">Имя</label>
           <input id="f-name" name="name" type="text" placeholder="Как к вам обращаться" data-en-ph="Your name" required>
@@ -1040,14 +1060,16 @@
 
   // --- FAQ accordion ---
   document.querySelectorAll('.qa-q').forEach(function(q){
+    q.setAttribute('aria-expanded','false');
     q.addEventListener('click', function(){
       var item = q.parentElement;
       var ans = item.querySelector('.qa-a');
       var isOpen = item.classList.contains('open');
       document.querySelectorAll('.qa.open').forEach(function(o){
         o.classList.remove('open'); o.querySelector('.qa-a').style.maxHeight = null;
+        var ob = o.querySelector('.qa-q'); if(ob) ob.setAttribute('aria-expanded','false');
       });
-      if(!isOpen){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+      if(!isOpen){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; q.setAttribute('aria-expanded','true'); }
     });
   });
 
@@ -1124,6 +1146,21 @@
   // --- footer year + telegram links from config ---
   var yEl = document.getElementById('year'); if(yEl){ yEl.textContent = new Date().getFullYear(); }
   if(cfg.telegram){ document.querySelectorAll('[data-tg]').forEach(function(a){ a.href = 'https://t.me/' + cfg.telegram; }); }
+
+  // --- Calendly booking (если задан cfg.calendly) ---
+  (function(){
+    if(!cfg.calendly) return;
+    var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = 'https://assets.calendly.com/assets/external/widget.css'; document.head.appendChild(css);
+    var s = document.createElement('script'); s.src = 'https://assets.calendly.com/assets/external/widget.js'; s.async = true; document.head.appendChild(s);
+    function openCal(e){
+      if(window.Calendly){
+        if(e) e.preventDefault();
+        window.Calendly.initPopupWidget({ url: cfg.calendly });
+        if(typeof track === 'function') track('calendly_open');
+      }
+    }
+    document.querySelectorAll('a[href="#demo"]').forEach(function(a){ a.addEventListener('click', openCal); });
+  })();
 
   // --- analytics helpers (Microsoft Clarity custom events + tags) ---
   function clr(){ if(window.clarity){ try{ window.clarity.apply(null, arguments); }catch(e){} } }
