@@ -42,13 +42,16 @@
   };
 </script>
 
-<!-- Microsoft Clarity (аналитика) -->
+<!-- Microsoft Clarity (аналитика) - грузится только после согласия на cookie -->
 <script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "xbhw0ezrk7");
+  window.__loadClarity = function(){
+    if(window.__clarityLoaded) return; window.__clarityLoaded = true;
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xbhw0ezrk7");
+  };
 </script>
 
 <style>
@@ -314,13 +317,40 @@
   .qa-a p{padding:0 24px 22px;color:var(--muted);font-size:15px;line-height:1.5}
 
   /* ---------- footer ---------- */
-  footer{background:var(--ink);color:var(--on-ink);padding:64px 0 56px;margin-top:40px}
-  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
-  .foot .logo{color:var(--on-ink)}
-  .foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px}
-  .foot-links a{color:rgba(243,240,238,.72)}
-  .foot-links a:hover{color:var(--on-ink)}
-  .foot-copy{font-size:13px;color:rgba(243,240,238,.55);margin-top:24px}
+  footer{background:var(--ink);color:var(--on-ink);padding:72px 0 40px;margin-top:48px}
+  .foot-cta{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap;padding-bottom:46px;border-bottom:1px solid rgba(243,240,238,.14)}
+  .foot-cta h2{font-size:clamp(25px,3vw,36px);color:var(--on-ink);max-width:560px;line-height:1.12;margin:0}
+  .foot-cta .btn{background:#fff;color:var(--ink);border-color:#fff;flex:none}
+  .foot-cta .btn:hover{background:var(--bg);border-color:var(--bg)}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;padding:46px 0 38px}
+  .foot-brand .logo{color:var(--on-ink);margin-bottom:16px}
+  .foot-brand p{color:rgba(243,240,238,.6);font-size:14px;line-height:1.55;max-width:300px}
+  .foot-col h4{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(243,240,238,.5);margin-bottom:15px}
+  .foot-col a{display:block;color:rgba(243,240,238,.78);font-size:14.5px;padding:5px 0;transition:.2s}
+  .foot-col a:hover{color:var(--on-ink)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(243,240,238,.14)}
+  .foot-copy{margin:0;font-size:13px;color:rgba(243,240,238,.5)}
+  .foot-legal{display:flex;gap:22px;flex-wrap:wrap;font-size:13px}
+  .foot-legal a{color:rgba(243,240,238,.6)}
+  .foot-legal a:hover{color:var(--on-ink)}
+
+  /* ---------- cookie consent ---------- */
+  .cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:600px;margin:0 auto;
+    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 16px 48px rgba(0,0,0,.16);
+    padding:18px 20px;display:none;align-items:center;gap:16px;flex-wrap:wrap}
+  .cookie.show{display:flex}
+  .cookie p{font-size:13.5px;color:var(--muted);line-height:1.45;flex:1;min-width:220px;margin:0}
+  .cookie a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+  .cookie-actions{display:flex;gap:10px;flex:none}
+  .cookie .btn{padding:9px 20px;font-size:14px}
+  .cookie .btn-accept{background:var(--accent);border-color:var(--accent);color:#fff}
+  .cookie .btn-accept:hover{background:#b53c00;border-color:#b53c00;transform:none}
+  .cookie .btn-decline{background:#fff;border-color:var(--line);color:var(--muted)}
+  .cookie .btn-decline:hover{background:var(--bg);transform:none}
+
+  /* ---------- sticky mobile CTA ---------- */
+  .sticky-cta{position:fixed;left:14px;right:14px;bottom:14px;z-index:55;display:none}
+  .sticky-cta .btn{width:100%;padding:15px;font-size:16px;box-shadow:0 12px 32px rgba(0,0,0,.22)}
 
   /* ---------- real-time live card ---------- */
   .live-wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
@@ -400,6 +430,8 @@
     .cta-form{border-left:none;border-top:1px solid var(--line)}
     .stats-strip{grid-template-columns:repeat(2,1fr)}
     .grid-3,.steps{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px 24px}
+    .foot-brand{grid-column:1 / -1}
   }
   @media(max-width:680px){
     section{padding:68px 0}
@@ -423,6 +455,10 @@
     .live-sub{font-size:12px}
     .live-badge{font-size:11px;padding:4px 11px;margin-left:0;align-self:center}
     .live-rec p{font-size:13.5px}
+    .foot-cta{flex-direction:column;align-items:flex-start;gap:20px}
+    .foot-cta .btn{width:100%}
+    .foot-bottom{flex-direction:column;align-items:flex-start;gap:12px}
+    .sticky-cta.show{display:block}
   }
   @media(max-width:380px){
     .stats-strip{grid-template-columns:1fr}
@@ -928,19 +964,56 @@
 <!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="wrap">
-    <div class="foot">
-      <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#141413"/><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" fill="none" stroke="#F3F0EE" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2.4" fill="#CF4500"/></svg></span><span data-brand>[Бренд]</span></a>
-      <div class="foot-links">
+    <div class="foot-cta">
+      <h2 data-en="Ready to see the system on your own data?">Готовы увидеть систему на своих данных?</h2>
+      <a href="#demo" class="btn btn-lg" data-en="Book a demo">Записаться на демо</a>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#141413"/><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" fill="none" stroke="#F3F0EE" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2.4" fill="#CF4500"/></svg></span><span data-brand>[Бренд]</span></a>
+        <p data-en="AI CRM with per-player retention for casino. Decisions on ML, not LLM.">AI-CRM с персональным retention для casino. Решения на ML, а не LLM.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Product">Продукт</h4>
         <a href="#product" data-en="Solution">Решение</a>
+        <a href="#realtime" data-en="Real-time">Real-time</a>
         <a href="#compare" data-en="Why us">Чем отличаемся</a>
         <a href="#how" data-en="How it works">Как работает</a>
-        <a href="#demo" data-en="Demo">Демо</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Company">Компания</h4>
+        <a href="#demo" data-en="Book a demo">Записаться на демо</a>
         <a href="#faq" data-en="FAQ">FAQ</a>
+        <a data-tg href="https://t.me/Moneylong001" target="_blank" rel="noopener">Telegram</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Legal">Правовое</h4>
+        <a href="/privacy.html" data-en="Privacy Policy">Политика конфиденциальности</a>
+        <a href="/terms.html" data-en="Terms of Use">Условия использования</a>
+        <a href="/privacy.html#cookies" data-en="Cookies">Cookie</a>
       </div>
     </div>
-    <p class="foot-copy">© <span id="year">2026</span> <span data-brand>[Бренд]</span> - <span data-en="per-player retention for casino. ML, not LLM.">per-player retention для casino. ML, а не LLM.</span></p>
+    <div class="foot-bottom">
+      <p class="foot-copy">© <span id="year">2026</span> <span data-brand>[Бренд]</span>. <span data-en="All rights reserved.">Все права защищены.</span></p>
+      <div class="foot-legal">
+        <a href="/privacy.html" data-en="Privacy">Конфиденциальность</a>
+        <a href="/terms.html" data-en="Terms">Условия</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<!-- ===================== STICKY MOBILE CTA ===================== -->
+<div class="sticky-cta" id="stickyCta"><a href="#demo" class="btn btn-primary" data-en="Book a demo">Записаться на демо</a></div>
+
+<!-- ===================== COOKIE CONSENT ===================== -->
+<div class="cookie" id="cookieBanner">
+  <p data-en="We use cookies and analytics (Microsoft Clarity) to improve the site. Details in our <a href='/privacy.html#cookies'>Privacy Policy</a>.">Мы используем cookie и аналитику (Microsoft Clarity), чтобы улучшать сайт. Подробнее - в <a href="/privacy.html#cookies">Политике конфиденциальности</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-decline" id="cookieDecline" type="button" data-en="Decline">Отклонить</button>
+    <button class="btn btn-accept" id="cookieAccept" type="button" data-en="Accept">Принять</button>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -1070,6 +1143,43 @@
       showMsg('err','Форма не настроена: задайте formEndpoint или telegram в CONFIG.','Form not configured: set formEndpoint or telegram in CONFIG.');
     }
   });
+
+  // --- footer year + telegram links from config ---
+  var yEl = document.getElementById('year'); if(yEl){ yEl.textContent = new Date().getFullYear(); }
+  if(cfg.telegram){ document.querySelectorAll('[data-tg]').forEach(function(a){ a.href = 'https://t.me/' + cfg.telegram; }); }
+
+  // --- cookie consent + analytics gating ---
+  (function(){
+    var KEY = 'cookieConsent';
+    var banner = document.getElementById('cookieBanner');
+    var saved = null; try{ saved = localStorage.getItem(KEY); }catch(e){}
+    function close(){ if(banner) banner.classList.remove('show'); window.dispatchEvent(new Event('cookiechange')); }
+    function accept(){ try{ localStorage.setItem(KEY,'accepted'); }catch(e){} if(window.__loadClarity) window.__loadClarity(); close(); }
+    function decline(){ try{ localStorage.setItem(KEY,'declined'); }catch(e){} close(); }
+    if(saved === 'accepted'){ if(window.__loadClarity) window.__loadClarity(); }
+    else if(saved !== 'declined' && banner){ banner.classList.add('show'); }
+    var a = document.getElementById('cookieAccept'); if(a) a.addEventListener('click', accept);
+    var d = document.getElementById('cookieDecline'); if(d) d.addEventListener('click', decline);
+  })();
+
+  // --- sticky mobile CTA ---
+  (function(){
+    var el = document.getElementById('stickyCta'); if(!el) return;
+    var hero = document.querySelector('.hero');
+    var demo = document.getElementById('demo');
+    var cookie = document.getElementById('cookieBanner');
+    function upd(){
+      var pastHero = hero ? (window.scrollY > hero.offsetTop + hero.offsetHeight - 120) : window.scrollY > 500;
+      var demoVisible = false;
+      if(demo){ var r = demo.getBoundingClientRect(); demoVisible = r.top < window.innerHeight && r.bottom > 80; }
+      var cookieOpen = cookie && cookie.classList.contains('show');
+      el.classList.toggle('show', pastHero && !demoVisible && !cookieOpen);
+    }
+    window.addEventListener('scroll', upd, {passive:true});
+    window.addEventListener('resize', upd);
+    window.addEventListener('cookiechange', upd);
+    upd();
+  })();
 })();
 </script>
 </body>
