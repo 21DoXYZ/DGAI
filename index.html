@@ -1162,15 +1162,10 @@
     document.querySelectorAll('a[href="#demo"]').forEach(function(a){ a.addEventListener('click', openCal); });
   })();
 
-  // --- все CTA "Записаться на демо" ведут в Telegram (если не задан Calendly) ---
-  if(cfg.telegram && !cfg.calendly){
-    document.querySelectorAll('a[href="#demo"]').forEach(function(a){
-      a.setAttribute('data-cta','demo');
-      a.setAttribute('href','https://t.me/'+cfg.telegram);
-      a.setAttribute('target','_blank');
-      a.setAttribute('rel','noopener');
-    });
-  }
+  // --- CTA "Записаться на демо" ведут к форме ниже (#demo) ---
+  document.querySelectorAll('a[href="#demo"]').forEach(function(a){
+    a.setAttribute('data-cta','demo');
+  });
 
   // --- analytics helpers (Microsoft Clarity custom events + tags) ---
   function clr(){ if(window.clarity){ try{ window.clarity.apply(null, arguments); }catch(e){} } }
