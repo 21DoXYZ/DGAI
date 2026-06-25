@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Разработка - AI/ML-студия за Retivo · 2pizza.team</title>
-<meta name="description" content="Retivo делает студия 2pizza.team. Закрываем AI/ML-инжиниринг и кастомную разработку для iGaming: ретеншн, агенты, генеративный контент, данные, интеграции.">
+<meta name="description" content="Retivo делает студия 2pizza.team. AI/ML-инжиниринг и кастомная разработка для iGaming: ретеншн, агенты, генеративный контент, данные, платежи. По сегментам.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://retivo.cc/dev">
-
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23141413'/%3E%3Cpath d='M11.5 23.8A9 9 0 1 1 20.5 23.8' fill='none' stroke='%23F3F0EE' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='7' r='2.4' fill='%23CF4500'/%3E%3C/svg%3E">
 <meta property="og:title" content="AI/ML-разработка от студии 2pizza.team">
-<meta property="og:description" content="Retivo - один из продуктов студии 2pizza.team. Закрываем AI/ML-инжиниринг и кастомную разработку для iGaming.">
+<meta property="og:description" content="Retivo - один из продуктов студии 2pizza.team. AI/ML-инжиниринг и кастомная разработка для iGaming.">
 <meta property="og:image" content="https://retivo.cc/og.png?v=2">
 <meta property="og:url" content="https://retivo.cc/dev">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
@@ -21,10 +19,9 @@
 <script>
   window.SITE_CONFIG = {
     telegram: "Moneylong001",
-    studioUrl: "https://2pizza-studio.vercel.app"   // полный сайт студии (заменить на 2pizza.team при привязке домена)
+    studioUrl: "https://2pizza-studio.vercel.app"
   };
 </script>
-<!-- Microsoft Clarity -->
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","xbhw0ezrk7");
 </script>
@@ -32,126 +29,168 @@
 <style>
   :root{
     --bg:#F3F0EE;--bg-2:#FCFBFA;--panel:#FCFBFA;--panel-2:#F4F4F4;
-    --line:rgba(20,20,19,.14);--line-soft:rgba(20,20,19,.07);
-    --text:#141413;--muted:#555555;--muted-2:#696969;--ink:#141413;--on-ink:#F3F0EE;
-    --accent:#CF4500;--accent-2:#F37338;--accent-soft:rgba(207,69,0,.08);
-    --studio:#2E50D8;
-    --radius:24px;--radius-lg:40px;--maxw:1120px;
-    --shadow:0 24px 48px 0 rgba(0,0,0,.08);--shadow-nav:0 4px 24px 0 rgba(0,0,0,.05);
+    --line:rgba(20,20,19,.13);--line-soft:rgba(20,20,19,.06);
+    --text:#141413;--muted:#54514d;--muted-2:#7a766f;--ink:#141413;--on-ink:#F3F0EE;
+    --accent:#CF4500;--accent-2:#F37338;--accent-soft:rgba(207,69,0,.07);--studio:#2E50D8;
+    --radius:22px;--radius-lg:36px;--maxw:1180px;
+    --shadow:0 20px 50px -12px rgba(20,20,19,.12);--shadow-nav:0 6px 24px -8px rgba(20,20,19,.12);
     --font:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:104px}
-  body{font-family:var(--font);background:var(--bg);color:var(--text);font-weight:450;line-height:1.4;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(50% 40% at 12% 0%, rgba(243,115,56,.07), transparent 60%),radial-gradient(45% 40% at 92% 6%, rgba(207,69,0,.05), transparent 60%)}
+  html{scroll-behavior:smooth;scroll-padding-top:110px}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);font-weight:450;font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(48% 38% at 12% 0%, rgba(243,115,56,.08), transparent 62%),radial-gradient(42% 38% at 92% 4%, rgba(207,69,0,.05), transparent 62%)}
   a{color:inherit;text-decoration:none}
   a,button{-webkit-tap-highlight-color:transparent}
   ::selection{background:var(--ink);color:var(--on-ink)}
   :focus-visible{outline:2px dashed var(--ink);outline-offset:3px;border-radius:6px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:88px 0;position:relative}
-  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:20px}
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2)}
-  h1,h2,h3{line-height:1.1;letter-spacing:-.022em;font-weight:600;color:var(--text)}
-  h1{font-weight:600;letter-spacing:-.03em}
-  h2{font-size:clamp(28px,4vw,42px);line-height:1.08;margin-bottom:16px}
-  .lead{font-size:clamp(16px,2vw,19px);line-height:1.5;color:var(--muted);max-width:640px}
-  .grad{color:var(--text);text-decoration:underline;text-decoration-color:var(--accent-2);text-decoration-thickness:2px;text-underline-offset:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  section{padding:112px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-2);margin-bottom:22px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent-2)}
+  h1,h2,h3,h4{line-height:1.12;letter-spacing:-.02em;font-weight:600;color:var(--text)}
+  h1{font-weight:700;letter-spacing:-.03em}
+  h2{font-size:clamp(30px,4vw,46px);line-height:1.06;margin-bottom:20px}
+  .lead{font-size:clamp(18px,2.1vw,21px);line-height:1.6;color:var(--muted);max-width:680px}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:500;font-size:15px;letter-spacing:-.01em;cursor:pointer;padding:13px 28px;border-radius:100px;transition:.2s ease;white-space:nowrap;border:1.5px solid transparent}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-.01em;cursor:pointer;padding:15px 32px;border-radius:100px;transition:.2s ease;white-space:nowrap;border:1.5px solid transparent}
   .btn-primary{color:var(--on-ink);background:var(--ink);border-color:var(--ink)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
   .btn-ghost{color:var(--text);background:#fff;border-color:var(--ink)}
   .btn-ghost:hover{background:var(--bg);transform:translateY(-2px)}
-  .btn-lg{padding:16px 34px;font-size:16px}
 
   .lang-switch{display:inline-flex;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden}
-  .lang-switch button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:500;padding:7px 13px;cursor:pointer;transition:.2s}
+  .lang-switch button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:600;padding:8px 14px;cursor:pointer;transition:.2s}
   .lang-switch button.active{background:var(--ink);color:var(--on-ink)}
 
   header{position:sticky;top:0;z-index:50;padding:18px 0}
-  .nav{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:100px;padding:12px 14px 12px 24px;box-shadow:var(--shadow-nav)}
-  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.03em;color:var(--text)}
-  .logo-mark{width:28px;height:28px;flex:none;display:block}
-  .nav-mid{display:flex;align-items:center;gap:22px}
-  .nav-mid a{font-size:15px;font-weight:500;color:var(--text)}
+  .nav{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border:1px solid var(--line-soft);border-radius:100px;padding:12px 14px 12px 26px;box-shadow:var(--shadow-nav)}
+  .logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px;letter-spacing:-.03em;color:var(--text)}
+  .logo-mark{width:30px;height:30px;flex:none;display:block}
+  .nav-mid{display:flex;align-items:center;gap:26px}
+  .nav-mid a{font-size:15.5px;font-weight:500;color:var(--text)}
   .nav-mid a:hover{color:var(--accent)}
-  .nav-cta{display:flex;align-items:center;gap:12px}
-  @media(max-width:720px){.nav-mid a{display:none}.nav{padding:10px 12px 10px 18px}}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  @media(max-width:880px){.nav-mid a{display:none}.nav{padding:11px 13px 11px 20px}}
 
-  .hero{padding-top:64px;padding-bottom:36px}
-  .hero .badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--studio);background:rgba(46,80,216,.08);border:1px solid rgba(46,80,216,.22);padding:7px 14px;border-radius:100px;margin-bottom:22px}
-  .hero .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--studio)}
-  .hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;max-width:840px;margin-bottom:20px}
-  .hero .lead{font-size:clamp(17px,2.2vw,21px);margin-bottom:30px}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero{padding-top:72px;padding-bottom:64px}
+  .hero .badge{display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:600;color:var(--studio);background:rgba(46,80,216,.07);border:1px solid rgba(46,80,216,.2);padding:8px 16px;border-radius:100px;margin-bottom:26px}
+  .hero .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--studio)}
+  .hero h1{font-size:clamp(38px,5.6vw,62px);line-height:1.04;max-width:900px;margin-bottom:24px}
+  .hero .lead{font-size:clamp(19px,2.3vw,23px);max-width:720px;margin-bottom:34px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+  .facts{display:flex;gap:12px;flex-wrap:wrap}
+  .fact{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;color:var(--muted);background:#fff;border:1px solid var(--line);padding:10px 18px;border-radius:100px}
+  .fact::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent-2);flex:none}
 
-  .grid{display:grid;gap:18px}
+  .sec-head{max-width:720px;margin-bottom:60px}
+  .grid{display:grid;gap:24px}
   .grid-3{grid-template-columns:repeat(3,1fr)}
   .grid-2{grid-template-columns:repeat(2,1fr)}
-  .sec-head{max-width:680px;margin-bottom:44px}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
 
-  .feature{display:flex;flex-direction:column;gap:13px;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:.25s}
-  .feature:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
-  .feature:hover .ic{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
-  .feature .ic{flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line);color:var(--text);transition:.25s}
-  .ic svg{width:22px;height:22px}
-  .feature h3{font-size:18px}
-  .feature p{color:var(--muted);font-size:14.5px;line-height:1.5}
+  /* capability cards */
+  .cap{display:flex;flex-direction:column;gap:16px;padding:36px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:.25s}
+  .cap:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .cap:hover .ic{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+  .ic{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line);color:var(--text);transition:.25s}
+  .ic svg{width:24px;height:24px}
+  .cap h3{font-size:21px;letter-spacing:-.01em}
+  .cap p{color:var(--muted);font-size:16px;line-height:1.6}
 
-  .approach{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);padding:44px;box-shadow:var(--shadow);text-align:center}
-  .approach p.m{font-size:clamp(18px,2.3vw,23px);line-height:1.45;font-weight:500;max-width:760px;margin:0 auto;letter-spacing:-.01em}
-  .approach p.m b{color:var(--accent)}
+  /* featured niche */
+  .niche-featured{border:1.5px solid var(--accent);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:52px;margin-bottom:24px;display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}
+  .niche-featured .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(207,69,0,.22);padding:7px 15px;border-radius:100px;margin-bottom:20px}
+  .niche-featured h3{font-size:clamp(26px,3.2vw,34px);letter-spacing:-.02em;margin-bottom:16px}
+  .niche-featured .ctx{color:var(--muted-2);font-size:15px;margin-bottom:18px;line-height:1.55}
+  .niche-featured .pain{color:var(--muted);font-size:17px;line-height:1.6}
+  .niche-featured .k{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
+  .niche-featured ul{list-style:none;display:grid;gap:14px;margin-bottom:26px}
+  .niche-featured li{position:relative;padding-left:34px;font-size:16px;color:var(--text);line-height:1.55}
+  .niche-featured li b{font-weight:600}
+  .niche-featured li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:13px;background-repeat:no-repeat;background-position:center}
+  .niche-featured .offer{font-size:16px;font-weight:500;color:var(--text);border-left:3px solid var(--accent);padding-left:16px;margin-bottom:26px;line-height:1.55}
 
-  .cta-band{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
-  .cta-band h2{margin:0;max-width:560px}
-  .cta-band .sub{color:var(--muted);font-size:15px;margin-top:8px;max-width:520px}
-  .cta-band .actions{display:flex;gap:12px;flex-wrap:wrap}
+  /* segment cards */
+  .seg{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);display:flex;flex-direction:column;transition:.25s}
+  .seg:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .seg .top{display:flex;align-items:center;gap:13px;margin-bottom:8px}
+  .seg .ic{width:46px;height:46px}
+  .seg .ic svg{width:21px;height:21px}
+  .seg h3{font-size:20px}
+  .seg .ctx{color:var(--muted-2);font-size:14.5px;line-height:1.5;margin-bottom:20px}
+  .seg .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:7px}
+  .seg .pain-k{color:#a23a2a}
+  .seg .give-k{color:var(--accent)}
+  .seg .pain{color:var(--muted);font-size:15.5px;line-height:1.55;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+  .seg ul{list-style:none;display:grid;gap:10px;margin-top:2px}
+  .seg li{position:relative;padding-left:26px;font-size:15.5px;color:var(--text);line-height:1.5}
+  .seg li::before{content:"";position:absolute;left:0;top:2px;width:17px;height:17px;border-radius:50%;background:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
 
-  footer{background:var(--ink);color:var(--on-ink);padding:48px 0;margin-top:40px}
-  .foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  /* build groups */
+  .bgroup{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .bgroup h3{font-size:19px;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .bgroup h3 .ic{width:44px;height:44px}
+  .bgroup h3 .ic svg{width:20px;height:20px}
+  .bgroup ul{list-style:none;display:grid;gap:13px}
+  .bgroup li{position:relative;padding-left:28px;font-size:16px;color:var(--text);line-height:1.5}
+  .bgroup li span{color:var(--muted);font-weight:400}
+  .bgroup li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:11px;background-repeat:no-repeat;background-position:center}
+
+  /* process steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:st}
+  .step{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .step::before{counter-increment:st;content:"0" counter(st);font-size:38px;font-weight:700;letter-spacing:-.02em;color:var(--accent);display:block;margin-bottom:16px}
+  .step h3{font-size:19px;margin-bottom:9px}
+  .step p{color:var(--muted);font-size:16px;line-height:1.55}
+  .models{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+  .model{padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-2)}
+  .model .n{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:11px}
+  .model h3{font-size:20px;margin-bottom:9px}
+  .model p{color:var(--muted);font-size:16px;line-height:1.55}
+
+  /* why us tiles */
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .wtile{padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .wtile .ic{margin-bottom:18px}
+  .wtile h3{font-size:18px;margin-bottom:8px}
+  .wtile p{color:var(--muted);font-size:15.5px;line-height:1.55}
+
+  /* approach */
+  .approach{border:1px solid var(--line);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:56px}
+  .approach .m{font-size:clamp(20px,2.5vw,26px);line-height:1.45;font-weight:500;max-width:820px;letter-spacing:-.01em}
+  .approach .m b{color:var(--accent)}
+
+  /* cta band */
+  .cta-band{background:var(--ink);color:var(--on-ink);border-radius:var(--radius-lg);padding:56px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+  .cta-band h2{margin:0;color:var(--on-ink);max-width:560px}
+  .cta-band .sub{color:rgba(243,240,238,.7);font-size:16px;margin-top:10px;max-width:520px;line-height:1.55}
+  .cta-band .actions{display:flex;gap:14px;flex-wrap:wrap}
+  .cta-band .btn-primary{background:#fff;color:var(--ink);border-color:#fff}
+  .cta-band .btn-ghost{background:transparent;color:var(--on-ink);border-color:rgba(243,240,238,.4)}
+  .cta-band .btn-ghost:hover{background:rgba(243,240,238,.08)}
+
+  footer{background:var(--ink);color:var(--on-ink);padding:52px 0;margin-top:8px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
   .foot .logo{color:var(--on-ink)}
-  .foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+  .foot-links{display:flex;gap:24px;flex-wrap:wrap;font-size:15px}
   .foot-links a{color:rgba(243,240,238,.72)}
   .foot-links a:hover{color:var(--on-ink)}
-  .foot-copy{font-size:12.5px;color:rgba(243,240,238,.5);margin-top:18px}
+  .foot-copy{font-size:13px;color:rgba(243,240,238,.5);margin-top:20px}
 
-  @media(max-width:840px){.grid-3{grid-template-columns:1fr 1fr}}
-  @media(max-width:620px){section{padding:64px 0}.grid-3,.grid-2{grid-template-columns:1fr}.cta-band{padding:32px 24px}.approach{padding:30px 22px}}
-  /* niches / segments */
-  .niche{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
-  .niche h3{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
-  .niche h3 .ic{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line);color:var(--text)}
-  .niche h3 .ic svg{width:19px;height:19px}
-  .niche .row{padding:13px 0;border-top:1px solid var(--line)}
-  .niche .row .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:5px}
-  .niche .row.pain .k{color:#a23a2a}
-  .niche .row.give .k{color:var(--accent)}
-  .niche .row p{font-size:14.5px;color:var(--text);line-height:1.5}
-  .niche-featured{border:1.5px solid var(--accent);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:40px;margin-bottom:18px;display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
-  .niche-featured .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(207,69,0,.22);padding:6px 13px;border-radius:100px;margin-bottom:16px}
-  .niche-featured h3{font-size:clamp(23px,3vw,30px);letter-spacing:-.02em;margin-bottom:13px}
-  .niche-featured .pain{color:var(--muted);font-size:15.5px;line-height:1.55}
-  .niche-featured .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px}
-  .niche-featured ul{list-style:none;display:grid;gap:11px;margin-bottom:20px}
-  .niche-featured li{position:relative;padding-left:30px;font-size:14.5px;color:var(--text);line-height:1.5}
-  .niche-featured li b{font-weight:600}
-  .niche-featured li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
-  .niche-featured .offer{font-size:15px;font-weight:500;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;margin-bottom:20px;line-height:1.5}
-  @media(max-width:840px){.niche-featured{grid-template-columns:1fr;gap:22px;padding:28px 22px}}
-  /* build list */
-  .build{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px}
-  .build .item{position:relative;padding-left:32px;font-size:15px;line-height:1.5;color:var(--muted)}
-  .build .item b{color:var(--text);font-weight:600}
-  .build .item::before{content:"";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
-  /* models */
-  .models{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .model{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
-  .model .n{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .model h3{font-size:19px;margin-bottom:8px}
-  .model p{color:var(--muted);font-size:14.5px;line-height:1.5}
-  .disc{margin-top:20px;font-size:14.5px;color:var(--muted);border-left:3px solid var(--accent);padding-left:14px;line-height:1.55}
-  @media(max-width:680px){.build,.models{grid-template-columns:1fr}}
+  @media(max-width:980px){
+    .grid-3,.grid-2,.grid-4,.steps,.models,.why{grid-template-columns:1fr 1fr}
+    .niche-featured{grid-template-columns:1fr;gap:30px;padding:36px}
+  }
+  @media(max-width:640px){
+    section{padding:72px 0}
+    .wrap{padding:0 20px}
+    .grid-3,.grid-2,.grid-4,.steps,.models,.why{grid-template-columns:1fr}
+    .approach,.cta-band{padding:34px 24px}
+    .cta-band{flex-direction:column;align-items:flex-start}
+    .cta-band .btn{width:100%}
+    .seg,.cap,.bgroup,.step,.model,.wtile{padding:28px 24px}
+  }
 </style>
 </head>
 <body>
@@ -163,13 +202,11 @@
       <a href="/" data-en="The product">Продукт</a>
       <a href="#do" data-en="What we do">Что делаем</a>
       <a href="#segments" data-en="Segments">Сегменты</a>
-      <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" data-en="Studio site">Сайт студии</a>
+      <a href="#build" data-en="What we build">Что построим</a>
+      <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" data-en="Studio">Студия</a>
     </div>
     <div class="nav-cta">
-      <div class="lang-switch">
-        <button type="button" data-lang="ru" class="active">RU</button>
-        <button type="button" data-lang="en">EN</button>
-      </div>
+      <div class="lang-switch"><button type="button" data-lang="ru" class="active">RU</button><button type="button" data-lang="en">EN</button></div>
       <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
     </div>
   </div>
@@ -178,11 +215,17 @@
 <!-- HERO -->
 <section class="hero wrap">
   <span class="badge" data-en="Studio 2pizza.team">Студия 2pizza.team</span>
-  <h1 data-en="The team behind Retivo - and your <span class='grad'>custom development</span>">Команда, которая сделала Retivo - и ваша <span class="grad">кастомная разработка</span></h1>
-  <p class="lead" data-en="Retivo is one of our products. The 2pizza.team studio closes AI/ML engineering and custom development for iGaming - on top of your data.">Retivo - один из наших продуктов. Студия 2pizza.team закрывает AI/ML-инжиниринг и кастомную разработку для iGaming - поверх ваших данных.</p>
+  <h1 data-en="The team behind Retivo - and your custom <span style='color:var(--accent)'>AI/ML development</span>">Команда, которая сделала Retivo - и ваша кастомная <span style="color:var(--accent)">AI/ML-разработка</span></h1>
+  <p class="lead" data-en="Retivo is one of our products. The 2pizza.team studio closes AI/ML engineering and custom development for iGaming - on top of your data. We pick a niche where speed and clean data matter, and go deep.">Retivo - один из наших продуктов. Студия 2pizza.team закрывает AI/ML-инжиниринг и кастомную разработку для iGaming - поверх ваших данных. Берём нишу, где важны скорость и чистые данные, и углубляемся.</p>
   <div class="hero-cta">
-    <a href="#" data-cta="contact" class="btn btn-primary btn-lg" data-en="Discuss a project">Обсудить задачу</a>
-    <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-en="Full studio site">Полный сайт студии</a>
+    <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
+    <a href="#segments" class="btn btn-ghost" data-en="See segments">Смотреть сегменты</a>
+  </div>
+  <div class="facts">
+    <span class="fact" data-en="Idea to product in weeks">От идеи до продукта - недели</span>
+    <span class="fact" data-en="ML, not LLM in money">ML, а не LLM в деньгах</span>
+    <span class="fact" data-en="iGaming domain">iGaming-домен</span>
+    <span class="fact" data-en="our own studio">своя студия</span>
   </div>
 </section>
 
@@ -194,35 +237,35 @@
     <p class="lead" data-en="Not 'we do everything'. A defined range - from ML decisioning to integrations and team augmentation.">Не «делаем всё». Понятный охват - от ML-decisioning до интеграций и усиления команды.</p>
   </div>
   <div class="grid grid-3">
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></svg></div>
       <h3 data-en="Retention &amp; decisioning (ML)">Retention &amp; decisioning (ML)</h3>
-      <p data-en="Churn/value scoring, offer timing and selection, VIP retention.">Скоринг оттока/ценности, тайминг и выбор оффера, VIP-ретеншн.</p>
+      <p data-en="Churn and value scoring per player, offer timing and selection, VIP retention. A decision, not a cohort.">Скоринг оттока и ценности по каждому игроку, тайминг и выбор оффера, VIP-ретеншн. Решение, а не когорта.</p>
     </div>
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.6 7.2 9.6 10M17.4 7.2 14.4 10M6.6 16.8 9.6 14M17.4 16.8 14.4 14"/></svg></div>
       <h3 data-en="AI agents &amp; automation">AI-агенты и автоматизация</h3>
-      <p data-en="Media-buying agents (L1 -> L2 -> L3 autopilot by KPI), routine automation.">Агенты медиабаинга (L1 -> L2 -> L3 автопилот по KPI), автоматизация рутины.</p>
+      <p data-en="Media-buying agents - L1 recommend, L2 confirm, L3 autopilot by KPI - and automation of routine work.">Агенты медиабаинга - L1 рекомендации, L2 подтверждение, L3 автопилот по KPI - и автоматизация рутины.</p>
     </div>
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></div>
       <h3 data-en="Generative content">Генеративный контент</h3>
-      <p data-en="Video/creative pipelines at volume, content for UBT traffic.">Пайплайны видео/креативов под объём, контент под UBT-трафик.</p>
+      <p data-en="Video and creative pipelines at volume, per-GEO adaptation, content for UBT traffic.">Пайплайны видео и креативов под объём, адаптация под GEO, контент под UBT-трафик.</p>
     </div>
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg></div>
       <h3 data-en="Data &amp; analytics">Данные и аналитика</h3>
-      <p data-en="360 player profile, dashboards, behavioral segmentation, BI.">Карточка игрока 360°, дашборды, поведенческая сегментация, BI.</p>
+      <p data-en="360 player profile, dashboards, BI, behavioral segmentation, and predictions on your data.">Карточка игрока 360°, дашборды, BI, поведенческая сегментация и предсказания на ваших данных.</p>
     </div>
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 17-5-5 5-5"/><path d="m16 7 5 5-5 5"/><path d="m13 4-2 16"/></svg></div>
       <h3 data-en="Custom dev &amp; integrations">Кастомная разработка</h3>
-      <p data-en="Backend, platform/payment API integrations, frontend.">Бэкенд, API-интеграции платформ/платёжки, фронт.</p>
+      <p data-en="Backend, platform and payment API integrations, frontend. Any task around your product.">Бэкенд, API платформ и платёжек, фронт. Любая задача вокруг вашего продукта.</p>
     </div>
-    <div class="feature">
+    <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.4"/><path d="M18 14.2a5.5 5.5 0 0 1 2.5 4.6"/></svg></div>
       <h3 data-en="Staff augmentation">Staff augmentation</h3>
-      <p data-en="Reinforce your team with engineers/ML for the project.">Усиление вашей команды инженерами/ML под проект.</p>
+      <p data-en="Reinforce your team with engineers and ML for the project - without bloating headcount.">Усиление вашей команды инженерами и ML под проект - без раздувания штата.</p>
     </div>
   </div>
 </section>
@@ -230,59 +273,102 @@
 <!-- SEGMENTS -->
 <section id="segments" class="wrap">
   <div class="sec-head">
-    <span class="eyebrow" data-en="Segments">Сегменты</span>
+    <span class="eyebrow" data-en="iGaming segments">Сегменты iGaming</span>
     <h2 data-en="Who we work with - and with what">Кому и с чем заходим</h2>
-    <p class="lead" data-en="Not 'everyone'. We lead with one niche where speed and clean data matter most - and go deep.">Не «всем». Заходим в нишу, где скорость и чистые данные критичны - и углубляемся.</p>
+    <p class="lead" data-en="We lead with one niche where speed and clean data matter most - and cover the rest of the market around it.">Заходим в одну нишу, где скорость и чистые данные критичны - и закрываем остальной рынок вокруг неё.</p>
   </div>
 
   <div class="niche-featured">
     <div>
       <span class="tag" data-en="Focus niche">Фокус-ниша</span>
       <h3 data-en="Affiliates &amp; media-buying teams">Аффилиаты и медиабаинг-команды</h3>
+      <p class="ctx" data-en="There are more such teams than casinos, they're more technical, and they spin big LV (rebate, % of revenue).">Команд больше, чем казино, они технологичнее и крутят большие LV (ребейт, % от дохода).</p>
       <p class="pain" data-en="Manual campaigns and creatives don't scale. You need content volume per GEO - and end-to-end analytics to see what actually works.">Ручные кампании и креативы не масштабируются. Нужен объём контента под GEO - и сквозная аналитика, чтобы видеть, что реально работает.</p>
     </div>
     <div>
       <div class="k" data-en="What we build">Что делаем</div>
       <ul>
-        <li data-en="<b>Creative-gen platform</b> with per-GEO adaptation - faster launches, less manual work">Платформа <b>генерации креативов</b> с адаптацией под GEO - запуски быстрее, руками меньше</li>
-        <li data-en="<b>Video / UBT studio</b> for content at volume">Видео / <b>UBT-студия</b> под объём контента</li>
-        <li data-en="<b>End-to-end analytics</b> + media-buying AI agents">Сквозная аналитика + <b>AI-агенты медиабаинга</b></li>
+        <li data-en="<b>Creative-gen platform</b> with per-GEO adaptation - faster launches, far less manual work">Платформа <b>генерации креативов</b> с адаптацией под GEO - запуски быстрее, ручной работы кратно меньше</li>
+        <li data-en="<b>Video / UBT studio</b> - clips at volume, cheap and fast">Видео / <b>UBT-студия</b> - ролики под объём, дёшево и быстро</li>
+        <li data-en="<b>End-to-end analytics</b> + media-buying AI agents (L1/L2/L3)">Сквозная аналитика + <b>AI-агенты медиабаинга</b> (L1/L2/L3)</li>
       </ul>
-      <p class="offer" data-en="Generate and adapt creatives per GEO at volume - launches faster, less by hand.">Генерим и адаптируем креативы под GEO в объёме - запуски быстрее, ручной работы меньше.</p>
+      <p class="offer" data-en="Generate and adapt creatives per GEO at volume - launches faster, less by hand. A similar creative platform for buyers we ship in ~2 weeks.">Генерим и адаптируем креативы под GEO в объёме. Похожую платформу креативов для байеров собираем за ~2 недели.</p>
       <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
     </div>
   </div>
 
-  <div class="grid grid-3">
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span data-en="Game providers / studios">Игровые провайдеры / студии</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Tools and analytics aren't in a modern shape; no real data work or predictions on revenue.">Инструменты и аналитика не в современном виде; нет работы с данными и предсказаний по обороту.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Tools, dashboards and predictions; custom or a product to scale to market.">Инструменты, дашборды и предсказания; кастом или продукт под масштаб.</p></div>
+  <div class="grid grid-2">
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><h3 data-en="Game providers / studios">Игровые провайдеры / студии</h3></div>
+      <p class="ctx" data-en="Huge market with recurring revenue - 5-9% of GGR per game, per casino, every month.">Огромный рынок с recurring-доходом - 5-9% от GGR с каждой игры у каждого казино, ежемесячно.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Tools and analytics aren't in a modern shape; no real data work or revenue predictions.">Инструменты и аналитика не в современном виде; нет нормальной работы с данными и предсказаний по обороту.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Modern tools and dashboards for the studio">Современные инструменты и дашборды для студии</li>
+        <li data-en="Revenue and game predictions on your data">Предсказания по обороту и играм на ваших данных</li>
+        <li data-en="Custom - or a product to scale to market">Кастом - или продукт под масштаб на рынок</li>
+      </ul>
     </div>
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><span data-en="Game aggregators">Агрегаторы игр</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Integrations and revenue accounting by hand; no convenient view of games and GGR.">Интеграции и учёт оборота руками; нет удобного среза по играм и GGR.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Analytics on games and revenue, automation, a white-label module into your stack.">Аналитика по играм и обороту, автоматизация, white-label модуль в ваш стек.</p></div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3 data-en="Game aggregators">Агрегаторы игр</h3></div>
+      <p class="ctx" data-en="Distribute games to casinos and earn on turnover - integrations are the core of the business.">Раздают игры казино и зарабатывают на обороте - интеграции это ядро бизнеса.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Integrations and revenue accounting by hand; no convenient view of games and GGR.">Интеграции и учёт оборота вручную; нет удобного среза по играм и GGR.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Analytics on games and turnover">Аналитика по играм и обороту</li>
+        <li data-en="Integration and routing automation">Автоматизация интеграций и маршрутизации</li>
+        <li data-en="White-label module into your stack">White-label модуль в ваш стек</li>
+      </ul>
     </div>
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><span data-en="Self-built operators">Операторы (self-built)</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Expensive manual retention, cohort spam burns bonuses, VIP churn.">Дорогой ручной ретеншн, когортный спам жжёт бонусы, отток VIP.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Retivo (retention) + analytics + custom for your stack.">Retivo (ретеншн) + аналитика + кастом под ваш стек.</p></div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3 data-en="Self-built operators">Операторы (self-built)</h3></div>
+      <p class="ctx" data-en="Casinos not on a platform, building everything themselves - the pain burns hottest here.">Казино не на платформе, всё пилят сами - боль горит здесь сильнее всего.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Expensive manual retention, cohort spam burns bonuses, VIP churn, decisions by gut feel.">Дорогой ручной ретеншн, когортный спам жжёт бонусы, отток VIP, решения на глаз.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Retivo - per-player retention CRM">Retivo - retention-CRM по каждому игроку</li>
+        <li data-en="Analytics and a 360 player profile">Аналитика и карточка игрока 360°</li>
+        <li data-en="Custom built for your stack">Кастом под ваш стек</li>
+      </ul>
     </div>
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><span data-en="Payments / cascades">Платёжки / каскады</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Manual cascades, low conversion, fraud, chargebacks and frozen accounts.">Ручные каскады, низкая конверсия, фрод, чарджбэки и заморозки счетов.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Cascade automation, higher conversion, fraud and risk signals.">Автоматизация каскадов, рост конверсии, сигналы по фроду и рискам.</p></div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><h3 data-en="Payments / cascades">Платёжки / каскады</h3></div>
+      <p class="ctx" data-en="Payments are run by hand and are a zone of risk - conversion and fraud directly hit revenue.">Платежи гоняют вручную, это зона риска - конверсия и фрод бьют по выручке напрямую.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Manual cascades, low conversion, fraud, chargebacks and frozen accounts.">Ручные каскады, низкая конверсия, фрод, чарджбэки и заморозки счетов.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Cascade automation and higher conversion">Автоматизация каскадов и рост конверсии</li>
+        <li data-en="Fraud and risk signals">Сигналы по фроду и рискам</li>
+        <li data-en="Transparency for the security team">Прозрачность для службы безопасности</li>
+      </ul>
     </div>
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span><span data-en="Industry events">Ивенты индустрии</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Working with attendees and data by hand; ~a dozen big conferences worldwide.">Работа с участниками и данными вручную; ~десяток крупных конф по миру.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Software for attendees, data and networking - a separate category.">Софт под участников, данные и нетворкинг - отдельная категория.</p></div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span><h3 data-en="Industry events">Ивенты индустрии</h3></div>
+      <p class="ctx" data-en="~a dozen big conferences worldwide (Europe, Cyprus, America) - a separate software category.">~десяток крупных конференций по миру (Европа, Кипр, Америка) - отдельная категория софта.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Working with attendees and event data by hand.">Работа с участниками и данными ивента вручную.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Software for attendees and data">Софт под участников и данные</li>
+        <li data-en="Networking and matchmaking tools">Инструменты нетворкинга и мэтчинга</li>
+        <li data-en="Analytics on the event">Аналитика по ивенту</li>
+      </ul>
     </div>
-    <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.3-3 7.3-7 8.8-4-1.5-7-4.5-7-8.8V5.8L12 3Z"/><path d="m9 11.5 2 2 4-4"/></svg></span><span data-en="Compliance / licensing">Комплаенс / лицензирование</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Licensing and account opening are slow and manual (auxiliary).">Лицензирование и открытие счетов медленно и вручную (вспомогательное).</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="We streamline the workflow - pointwise, on request.">Упрощаем рабочие процессы - точечно, по запросу.</p></div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.3-3 7.3-7 8.8-4-1.5-7-4.5-7-8.8V5.8L12 3Z"/><path d="m9 11.5 2 2 4-4"/></svg></span><h3 data-en="Compliance / licensing">Комплаенс / лицензирование</h3></div>
+      <p class="ctx" data-en="Auxiliary, on request - not the speed and volume of the core B2B, but we can simplify it.">Вспомогательное, по запросу - не та скорость и объёмы, что в ядре B2B, но упростить можем.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Licensing and account opening are slow and fully manual.">Лицензирование и открытие счетов медленно и полностью вручную.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Streamline the working process">Упрощаем рабочий процесс</li>
+        <li data-en="Document and status automation">Автоматизация документов и статусов</li>
+        <li data-en="Pointwise, on request">Точечно, по запросу</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -291,19 +377,46 @@
 <section id="build" class="wrap">
   <div class="sec-head">
     <span class="eyebrow" data-en="What we build">Что можем построить</span>
-    <h2 data-en="Concrete things we ship">Конкретно - что собираем</h2>
-    <p class="lead" data-en="From idea to a finished product in weeks - not alpha/beta. Examples below.">От идеи до готового продукта - недели, не альфа/бета. Примеры ниже.</p>
+    <h2 data-en="Concrete products, grouped">Конкретные продукты, по группам</h2>
+    <p class="lead" data-en="From idea to a finished product in weeks - not alpha/beta. Grouped by what it touches.">От идеи до готового продукта - недели, не альфа/бета. Сгруппировано по тому, чего касается.</p>
   </div>
-  <div class="build">
-    <div class="item" data-en="<b>Creative-gen platform</b> - per-GEO adaptation, at volume"><b>Платформа генерации креативов</b> - адаптация под GEO, объём</div>
-    <div class="item" data-en="<b>Video / UBT studio</b> - clips at volume, cheap and fast"><b>Видео / UBT-студия</b> - ролики под объём, дёшево и быстро</div>
-    <div class="item" data-en="<b>Retention CRM (Retivo)</b> - scoring and a decision per player"><b>Retention-CRM (Retivo)</b> - скоринг и решение по каждому игроку</div>
-    <div class="item" data-en="<b>End-to-end analytics &amp; BI</b> - dashboards, segmentation, 360 profile"><b>Сквозная аналитика и BI</b> - дашборды, сегментация, профиль 360°</div>
-    <div class="item" data-en="<b>Predictions on your data</b> - churn, value, demand, LTV"><b>Предсказания на ваших данных</b> - отток, ценность, спрос, LTV</div>
-    <div class="item" data-en="<b>Media-buying AI agents</b> - L1 recommend, L2 confirm, L3 autopilot by KPI"><b>AI-агенты медиабаинга</b> - L1 рекомендации, L2 подтверждение, L3 автопилот по KPI</div>
-    <div class="item" data-en="<b>Payment cascades + anti-fraud</b> - higher conversion, lower risk"><b>Платёжные каскады + антифрод</b> - выше конверсия, ниже риск</div>
-    <div class="item" data-en="<b>White-label ML module</b> - embedded into a platform / PAM stack"><b>White-label ML-модуль</b> - встраиваем в стек платформы / PAM</div>
-    <div class="item" data-en="<b>Data extraction &amp; integrations</b> - platform/payment APIs, your data in order"><b>Экстракция данных и интеграции</b> - API платформ/платёжек, ваши данные в порядке</div>
+  <div class="grid grid-2">
+    <div class="bgroup">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></svg></span><span data-en="Retention &amp; decisions">Ретеншн и решения</span></h3>
+      <ul>
+        <li data-en="<b>Retention CRM (Retivo)</b> <span>- a decision per player</span>"><b>Retention-CRM (Retivo)</b> <span>- решение по каждому игроку</span></li>
+        <li data-en="<b>Player scoring</b> <span>- churn, value, repeat deposit</span>"><b>Скоринг игроков</b> <span>- отток, ценность, повторный депозит</span></li>
+        <li data-en="<b>Predictions</b> <span>- LTV and demand on your data</span>"><b>Предсказания</b> <span>- LTV и спрос на ваших данных</span></li>
+        <li data-en="<b>Offer engine</b> <span>- what, to whom and when</span>"><b>Движок офферов</b> <span>- что, кому и когда</span></li>
+      </ul>
+    </div>
+    <div class="bgroup">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span data-en="Marketing &amp; content">Маркетинг и контент</span></h3>
+      <ul>
+        <li data-en="<b>Creative-gen platform</b> <span>- per-GEO adaptation, at volume</span>"><b>Платформа генерации креативов</b> <span>- адаптация под GEO, объём</span></li>
+        <li data-en="<b>Video / UBT studio</b> <span>- clips cheap and fast</span>"><b>Видео / UBT-студия</b> <span>- ролики дёшево и быстро</span></li>
+        <li data-en="<b>Media-buying AI agents</b> <span>- L1 / L2 / L3 by KPI</span>"><b>AI-агенты медиабаинга</b> <span>- L1 / L2 / L3 по KPI</span></li>
+        <li data-en="<b>End-to-end campaign analytics</b> <span>- what actually works</span>"><b>Сквозная аналитика кампаний</b> <span>- что реально работает</span></li>
+      </ul>
+    </div>
+    <div class="bgroup">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="13" y="7" width="3" height="11"/></svg></span><span data-en="Data &amp; analytics">Данные и аналитика</span></h3>
+      <ul>
+        <li data-en="<b>360 player profile</b> <span>- the whole behavior in one place</span>"><b>Карточка игрока 360°</b> <span>- всё поведение в одном месте</span></li>
+        <li data-en="<b>BI dashboards</b> <span>- the current picture, not yesterday's export</span>"><b>BI-дашборды</b> <span>- актуальная картина, не вчерашняя выгрузка</span></li>
+        <li data-en="<b>Behavioral segmentation</b> <span>- from cohorts to a single player</span>"><b>Поведенческая сегментация</b> <span>- от когорт до одного игрока</span></li>
+        <li data-en="<b>Data extraction &amp; integrations</b> <span>- your data in order</span>"><b>Экстракция данных и интеграции</b> <span>- ваши данные в порядке</span></li>
+      </ul>
+    </div>
+    <div class="bgroup">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><span data-en="Payments &amp; infrastructure">Платежи и инфраструктура</span></h3>
+      <ul>
+        <li data-en="<b>Payment cascades</b> <span>- higher conversion</span>"><b>Платёжные каскады</b> <span>- выше конверсия</span></li>
+        <li data-en="<b>Anti-fraud &amp; risk signals</b> <span>- fewer freezes and chargebacks</span>"><b>Антифрод и риск-сигналы</b> <span>- меньше заморозок и чарджбэков</span></li>
+        <li data-en="<b>White-label ML module</b> <span>- into a platform / PAM stack</span>"><b>White-label ML-модуль</b> <span>- в стек платформы / PAM</span></li>
+        <li data-en="<b>Backend &amp; API integrations</b> <span>- platforms and payments</span>"><b>Бэкенд и API-интеграции</b> <span>- платформы и платёжки</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -311,7 +424,21 @@
 <section id="how" class="wrap">
   <div class="sec-head">
     <span class="eyebrow" data-en="How we work">Как работаем</span>
-    <h2 data-en="Two models, one discovery">Две модели, один разбор</h2>
+    <h2 data-en="From discovery to a finished product">От разбора до готового продукта</h2>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <h3 data-en="Discovery">Разбор</h3>
+      <p data-en="Together we find what's done by hand or is inconvenient, and size it up - just for you, or for the market.">Вместе находим, что делается руками или неудобно, и считаем ёмкость - только под вас или под рынок.</p>
+    </div>
+    <div class="step">
+      <h3 data-en="Pilot on your data">Пилот на ваших данных</h3>
+      <p data-en="A fast result with a clear success metric - so you see the value before a full build.">Быстрый результат с понятной метрикой успеха - чтобы вы увидели ценность до полной сборки.</p>
+    </div>
+    <div class="step">
+      <h3 data-en="Product in weeks">Продукт за недели</h3>
+      <p data-en="From idea to a finished product (not alpha/beta) in weeks - then we scale and maintain it.">От идеи до готового продукта (не альфа/бета) за недели - дальше масштабируем и поддерживаем.</p>
+    </div>
   </div>
   <div class="models">
     <div class="model">
@@ -322,17 +449,46 @@
     <div class="model">
       <div class="n" data-en="Model B">Модель B</div>
       <h3 data-en="A product to scale">Продукт под масштаб</h3>
-      <p data-en="A solution you later scale or sell to the market (white-label, revenue share).">Решение, которое вы потом масштабируете или продаёте на рынок (white-label, доля).</p>
+      <p data-en="A solution you later scale or sell to the market - white-label or revenue share.">Решение, которое вы потом масштабируете или продаёте на рынок - white-label или доля.</p>
     </div>
   </div>
-  <p class="disc" data-en="We start with discovery: together we find what's done by hand or is inconvenient, and size it up - just for you or for the market. Idea to finished product - weeks.">Начинаем с разбора: вместе находим, что делается руками или неудобно, и считаем ёмкость - только под вас или под рынок. От идеи до готового продукта - недели.</p>
+</section>
+
+<!-- WHY US -->
+<section class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-en="Why us">Почему мы</span>
+    <h2 data-en="Speed, ML and a lean team">Скорость, ML и lean-команда</h2>
+  </div>
+  <div class="why">
+    <div class="wtile">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 13.5H11l-1 8.5L19 10h-6.5L13 2Z"/></svg></div>
+      <h3 data-en="Speed">Скорость</h3>
+      <p data-en="A finished product in weeks, not months. What others do in half a year.">Готовый продукт за недели, не месяцы. То, что другие делают за полгода.</p>
+    </div>
+    <div class="wtile">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 7h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 15h3"/></svg></div>
+      <h3 data-en="ML, not LLM">ML, а не LLM</h3>
+      <p data-en="Money decisions on verifiable formulas, not a black box. No hallucinations.">Решения по деньгам на проверяемых формулах, не «чёрным ящиком». Без галлюцинаций.</p>
+    </div>
+    <div class="wtile">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.4"/></svg></div>
+      <h3 data-en="Lean team">Lean-команда</h3>
+      <p data-en="We count unit economics - ours and yours. No bloated costs, no startup theater.">Считаем юнит-экономику - свою и вашу. Без раздутых костов и стартап-театра.</p>
+    </div>
+    <div class="wtile">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" transform="scale(0.83) translate(2.4 -1)"/><circle cx="12" cy="4" r="2" fill="currentColor" stroke="none"/></svg></div>
+      <h3 data-en="Proof - Retivo">Доказательство - Retivo</h3>
+      <p data-en="Built from scratch in a month; pays back the dev cost in 1-2 months. Demo on request.">Собрали с нуля за месяц; окупает разработку за 1-2 месяца. Демо по запросу.</p>
+    </div>
+  </div>
 </section>
 
 <!-- APPROACH -->
 <section class="wrap">
   <div class="approach">
     <span class="eyebrow" style="display:inline-flex" data-en="Approach">Подход</span>
-    <p class="m" data-en="Money decisions run on <b>verifiable formulas</b>, not a black box. Agents oversee agents. LLM only at the edges - copy and drafts. The same principle as in Retivo.">Решения по деньгам считаем на <b>проверяемых формулах</b>, а не «чёрным ящиком». Агенты контролируют агентов. LLM - только по краям: тексты и черновики. Тот же принцип, что и в Retivo.</p>
+    <p class="m" data-en="On a 5-7 month payback, one wrong offer means real money lost. So money decisions run on <b>verifiable formulas</b>, not a black box. <b>Agents oversee agents.</b> LLM only at the edges - copy and drafts. The same principle as in Retivo.">При payback в 5-7 месяцев одна ошибка с оффером - это реальные потери. Поэтому решения по деньгам считаем на <b>проверяемых формулах</b>, а не «чёрным ящиком». <b>Агенты контролируют агентов.</b> LLM - только по краям: тексты и черновики. Тот же принцип, что и в Retivo.</p>
   </div>
 </section>
 
@@ -341,11 +497,11 @@
   <div class="cta-band">
     <div>
       <h2 data-en="Have a task in iGaming?">Есть задача в iGaming?</h2>
-      <p class="sub" data-en="Tell us where it hurts - retention, agents, content or custom dev. We'll propose a pilot.">Расскажите, где болит - ретеншн, агенты, контент или кастом. Предложим формат пилота.</p>
+      <p class="sub" data-en="Tell us where it hurts - retention, agents, content, payments or custom dev. We'll propose a pilot.">Расскажите, где болит - ретеншн, агенты, контент, платежи или кастом. Предложим формат пилота.</p>
     </div>
     <div class="actions">
-      <a href="#" data-cta="contact" class="btn btn-primary btn-lg" data-en="Discuss a project">Обсудить задачу</a>
-      <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-en="Studio site -> 2pizza.team">Сайт студии -> 2pizza.team</a>
+      <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
+      <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" class="btn btn-ghost" data-en="Studio site">Сайт студии</a>
     </div>
   </div>
 </section>
@@ -384,17 +540,15 @@
 
   var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
   if(cfg.studioUrl){ document.querySelectorAll('[data-studio]').forEach(function(a){ a.href=cfg.studioUrl; }); }
-  if(cfg.telegram){
-    document.querySelectorAll('a[data-cta="contact"]').forEach(function(a){ a.href='https://t.me/'+cfg.telegram; a.target='_blank'; a.rel='noopener'; });
-  }
+  if(cfg.telegram){ document.querySelectorAll('a[data-cta="contact"]').forEach(function(a){ a.href='https://t.me/'+cfg.telegram; a.target='_blank'; a.rel='noopener'; }); }
+
   function clr(){ if(window.clarity){ try{ window.clarity.apply(null,arguments); }catch(e){} } }
-  clr('set','page','studio'); clr('event','studio_view');
+  clr('set','page','dev'); clr('event','dev_view');
   document.addEventListener('click', function(e){
     var a=e.target.closest && e.target.closest('a'); if(!a) return;
-    var h=a.getAttribute('href')||'';
     if(a.getAttribute('data-cta')==='contact') clr('event','cta_contact_click');
     if(a.hasAttribute('data-studio')) clr('event','studio_site_click');
-    if(h.indexOf('t.me/')!==-1) clr('event','telegram_click');
+    if((a.getAttribute('href')||'').indexOf('t.me/')!==-1) clr('event','telegram_click');
   }, true);
 })();
 </script>
