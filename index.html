@@ -939,6 +939,7 @@
           <label for="f-msg" data-en="Message">Сообщение</label>
           <textarea id="f-msg" name="message" rows="3" placeholder="Размер базы, что интересует, удобное время" data-en-ph="Base size, what you're interested in, preferred time"></textarea>
         </div>
+        <p class="privacy" style="margin:8px 0 0" data-en="Leave a request - it reaches our inbox. Or just message us on Telegram.">Оставьте заявку - она придёт нам на почту. Или просто напишите нам в Telegram.</p>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary" data-en="Send request">Отправить заявку</button>
           <a href="#" id="tgBtn" class="btn btn-ghost" target="_blank" rel="noopener" data-en="Message on Telegram">Написать в Telegram</a>
@@ -1105,25 +1106,34 @@
   var tgBtn = document.getElementById('tgBtn');
   if(cfg.telegram){ tgBtn.href = 'https://t.me/' + cfg.telegram; } else { tgBtn.style.display = 'none'; }
 
-  // --- form submit ---
+  // --- form: общие хелперы (посетитель сам выбирает канал: email или Telegram) ---
   var form = document.getElementById('demoForm');
   var msg = document.getElementById('formMsg');
   function isEn(){ return document.documentElement.lang === 'en'; }
   function showMsg(type, ru, en){ msg.className = 'form-msg ' + type; msg.textContent = isEn() ? en : ru; }
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var data = {
-      name: form.name.value.trim(),
-      brand: form.brand.value.trim(),
-      telegram: form.telegram.value.trim(),
-      message: form.message.value.trim()
+  function fieldVal(n){ var el = form.elements[n]; return el && el.value ? el.value.trim() : ''; }
+  function collectData(){
+    return {
+      name: fieldVal('name'),
+      brand: fieldVal('brand'),
+      telegram: fieldVal('telegram'),
+      message: fieldVal('message')
     };
+  }
+  function validData(data){
     if(!data.name || !data.brand || !data.telegram){
       showMsg('err','Заполните имя, бренд и Telegram.','Please fill in name, brand and Telegram.');
-      return;
+      return false;
     }
-    track('form_submit');
+    return true;
+  }
+
+  // --- отправка заявки на email через Formspree (кнопка "Отправить заявку") ---
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = collectData();
+    if(!validData(data)) return;
+    track('form_submit', {channel:'email'});
 
     if(cfg.formEndpoint){
       var btn = form.querySelector('button[type=submit]');
@@ -1136,7 +1146,7 @@
         if(r.ok){
           form.reset();
           showMsg('ok','Заявка отправлена! Свяжемся с вами в ближайшее время.','Request sent! We will get back to you shortly.');
-          track('lead_submitted'); clr('set','is_lead','yes'); clr('upgrade','lead');
+          track('lead_submitted', {channel:'email'}); clr('set','is_lead','yes'); clr('upgrade','lead');
         } else {
           showMsg('err','Не удалось отправить. Напишите нам в Telegram.','Could not send. Please message us on Telegram.');
         }
@@ -1146,16 +1156,12 @@
       return;
     }
 
-    if(cfg.telegram){
-      showMsg('ok','Спасибо! Открываем Telegram - отправьте нам это сообщение.','Thanks! Opening Telegram - please send us this message.');
-      var txt = 'Demo request:\nName: '+data.name+'\nBrand: '+data.brand+'\nTelegram: '+data.telegram+'\nMessage: '+(data.message||'-');
-      try{ navigator.clipboard && navigator.clipboard.writeText(txt); }catch(err){}
-      window.open('https://t.me/'+cfg.telegram, '_blank');
-      track('telegram_lead_open');
-    } else {
-      showMsg('err','Форма не настроена: задайте formEndpoint или telegram в CONFIG.','Form not configured: set formEndpoint or telegram in CONFIG.');
-    }
+    // email не настроен - просто открываем Telegram-чат
+    if(cfg.telegram){ window.open('https://t.me/'+cfg.telegram, '_blank'); track('telegram_lead_open'); }
+    else { showMsg('err','Форма не настроена.','Form not configured.'); }
   });
+
+  // Кнопка "Написать в Telegram" - обычная ссылка (href задан выше), просто открывает чат.
 
   // --- footer year + telegram links from config ---
   var yEl = document.getElementById('year'); if(yEl){ yEl.textContent = new Date().getFullYear(); }
