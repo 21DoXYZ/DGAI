@@ -64,9 +64,15 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "Organization", "@id": "https://retivo.cc/#org", "name": "Retivo", "url": "https://retivo.cc/", "logo": "https://retivo.cc/og.png?v=2", "sameAs": ["https://t.me/Moneylong001"] },
+    { "@type": "Organization", "@id": "https://retivo.cc/#org", "name": "Retivo", "url": "https://retivo.cc/", "logo": "https://retivo.cc/og.png?v=2", "areaServed": "Worldwide", "knowsAbout": ["retention CRM", "player scoring", "machine learning", "iGaming", "churn prediction"], "sameAs": ["https://t.me/Moneylong001"], "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "url": "https://t.me/Moneylong001", "availableLanguage": ["ru", "en"] } },
     { "@type": "WebSite", "@id": "https://retivo.cc/#website", "url": "https://retivo.cc/", "name": "Retivo", "inLanguage": "ru", "publisher": { "@id": "https://retivo.cc/#org" } },
-    { "@type": "SoftwareApplication", "name": "Retivo", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://retivo.cc/", "description": "AI-CRM с персональным retention для онлайн-казино: ML-скоринг риска оттока и ценности по каждому игроку, real-time рекомендации офферов." }
+    { "@type": "SoftwareApplication", "name": "Retivo", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "url": "https://retivo.cc/", "description": "AI-CRM с персональным retention для онлайн-казино: ML-скоринг риска оттока и ценности по каждому игроку, real-time рекомендации офферов." },
+    { "@type": "FAQPage", "mainEntity": [
+      { "@type": "Question", "name": "Чем вы лучше массовых рассылок и подобных решений?", "acceptedAnswer": { "@type": "Answer", "text": "Они работают по когортам. Мы решаем по каждому игроку: кого удерживать и кого реактивировать. Ценность - в скоринге, а не в самой отправке." } },
+      { "@type": "Question", "name": "AI же галлюцинирует и сломает payback.", "acceptedAnswer": { "@type": "Answer", "text": "В принятии решений нет LLM. Ядро - ML (градиентный бустинг, обучение с подкреплением) и агенты контролируют агентов. LLM используется только по краям, для текстов." } },
+      { "@type": "Question", "name": "У нас уже есть retention-команда.", "acceptedAnswer": { "@type": "Answer", "text": "Мы её усиливаем: подсвечиваем, с кем работать сейчас, и сокращаем ручной разбор. Не заменяем людей - повышаем точность и приоритизируем работу по риску." } },
+      { "@type": "Question", "name": "Насколько безопасны наши данные?", "acceptedAnswer": { "@type": "Answer", "text": "Безопасность данных - наш приоритет: шифрование, разграничение доступа и гибкие варианты развёртывания под ваши требования. Интеграция по API занимает дни." } }
+    ] }
   ]
 }
 </script>
