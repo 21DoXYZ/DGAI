@@ -6,13 +6,13 @@
 <title>Разработка - AI/ML-студия за Retivo · 2pizza.team</title>
 <meta name="description" content="Retivo делает студия 2pizza.team. Закрываем AI/ML-инжиниринг и кастомную разработку для iGaming: ретеншн, агенты, генеративный контент, данные, интеграции.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://retivo.cc/studio">
+<link rel="canonical" href="https://retivo.cc/dev">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23141413'/%3E%3Cpath d='M11.5 23.8A9 9 0 1 1 20.5 23.8' fill='none' stroke='%23F3F0EE' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='7' r='2.4' fill='%23CF4500'/%3E%3C/svg%3E">
 <meta property="og:title" content="AI/ML-разработка от студии 2pizza.team">
 <meta property="og:description" content="Retivo - один из продуктов студии 2pizza.team. Закрываем AI/ML-инжиниринг и кастомную разработку для iGaming.">
 <meta property="og:image" content="https://retivo.cc/og.png?v=2">
-<meta property="og:url" content="https://retivo.cc/studio">
+<meta property="og:url" content="https://retivo.cc/dev">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,6 +118,27 @@
 
   @media(max-width:840px){.grid-3{grid-template-columns:1fr 1fr}}
   @media(max-width:620px){section{padding:64px 0}.grid-3,.grid-2{grid-template-columns:1fr}.cta-band{padding:32px 24px}.approach{padding:30px 22px}}
+  /* niches / segments */
+  .niche{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .niche h3{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .niche h3 .ic{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line);color:var(--text)}
+  .niche h3 .ic svg{width:19px;height:19px}
+  .niche .row{padding:13px 0;border-top:1px solid var(--line)}
+  .niche .row .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:5px}
+  .niche .row.pain .k{color:#a23a2a}
+  .niche .row.give .k{color:var(--accent)}
+  .niche .row p{font-size:14.5px;color:var(--text);line-height:1.5}
+  .niche-featured{border:1.5px solid var(--accent);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:40px;margin-bottom:18px;display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:start}
+  .niche-featured .tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(207,69,0,.22);padding:6px 13px;border-radius:100px;margin-bottom:16px}
+  .niche-featured h3{font-size:clamp(23px,3vw,30px);letter-spacing:-.02em;margin-bottom:13px}
+  .niche-featured .pain{color:var(--muted);font-size:15.5px;line-height:1.55}
+  .niche-featured .k{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px}
+  .niche-featured ul{list-style:none;display:grid;gap:11px;margin-bottom:20px}
+  .niche-featured li{position:relative;padding-left:30px;font-size:14.5px;color:var(--text);line-height:1.5}
+  .niche-featured li b{font-weight:600}
+  .niche-featured li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
+  .niche-featured .offer{font-size:15px;font-weight:500;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;margin-bottom:20px;line-height:1.5}
+  @media(max-width:840px){.niche-featured{grid-template-columns:1fr;gap:22px;padding:28px 22px}}
 </style>
 </head>
 <body>
@@ -128,6 +149,7 @@
     <div class="nav-mid">
       <a href="/" data-en="The product">Продукт</a>
       <a href="#do" data-en="What we do">Что делаем</a>
+      <a href="#segments" data-en="Segments">Сегменты</a>
       <a data-studio href="https://2pizza-studio.vercel.app" target="_blank" rel="noopener" data-en="Studio site">Сайт студии</a>
     </div>
     <div class="nav-cta">
@@ -188,6 +210,51 @@
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.4"/><path d="M18 14.2a5.5 5.5 0 0 1 2.5 4.6"/></svg></div>
       <h3 data-en="Staff augmentation">Staff augmentation</h3>
       <p data-en="Reinforce your team with engineers/ML for the project.">Усиление вашей команды инженерами/ML под проект.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEGMENTS -->
+<section id="segments" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-en="Segments">Сегменты</span>
+    <h2 data-en="Who we work with - and with what">Кому и с чем заходим</h2>
+    <p class="lead" data-en="Not 'everyone'. We lead with one niche where speed and clean data matter most - and go deep.">Не «всем». Заходим в нишу, где скорость и чистые данные критичны - и углубляемся.</p>
+  </div>
+
+  <div class="niche-featured">
+    <div>
+      <span class="tag" data-en="Focus niche">Фокус-ниша</span>
+      <h3 data-en="Affiliates &amp; media-buying teams">Аффилиаты и медиабаинг-команды</h3>
+      <p class="pain" data-en="Manual campaigns and creatives don't scale. You need content volume per GEO - and end-to-end analytics to see what actually works.">Ручные кампании и креативы не масштабируются. Нужен объём контента под GEO - и сквозная аналитика, чтобы видеть, что реально работает.</p>
+    </div>
+    <div>
+      <div class="k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="<b>Creative-gen platform</b> with per-GEO adaptation - faster launches, less manual work">Платформа <b>генерации креативов</b> с адаптацией под GEO - запуски быстрее, руками меньше</li>
+        <li data-en="<b>Video / UBT studio</b> for content at volume">Видео / <b>UBT-студия</b> под объём контента</li>
+        <li data-en="<b>End-to-end analytics</b> + media-buying AI agents">Сквозная аналитика + <b>AI-агенты медиабаинга</b></li>
+      </ul>
+      <p class="offer" data-en="Generate and adapt creatives per GEO at volume - launches faster, less by hand.">Генерим и адаптируем креативы под GEO в объёме - запуски быстрее, ручной работы меньше.</p>
+      <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
+    </div>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span data-en="Game providers / aggregators">Игровые провайдеры / агрегаторы</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Tools and analytics aren't in a modern, convenient shape; no real data work or predictions.">Инструменты и аналитика не в современном виде; нет работы с данными и предсказаний.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Tools, dashboards and predictions; custom or a product to scale to market.">Инструменты, дашборды и предсказания; кастом или продукт под масштаб.</p></div>
+    </div>
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><span data-en="Self-built operators">Операторы (self-built)</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Expensive manual retention, cohort spam burns bonuses, VIP churn.">Дорогой ручной ретеншн, когортный спам жжёт бонусы, отток VIP.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Retivo (retention) + analytics + custom for your stack.">Retivo (ретеншн) + аналитика + кастом под ваш стек.</p></div>
+    </div>
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><span data-en="Payments / cascades">Платёжки / каскады</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Manual cascades, low conversion, fraud and frozen accounts.">Ручные каскады, низкая конверсия, фрод и заморозки счетов.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Cascade automation, higher payment conversion, fraud signals.">Автоматизация каскадов, рост конверсии, сигналы по фроду.</p></div>
     </div>
   </div>
 </section>

@@ -1,4 +1,11 @@
 {
+  "rewrites": [
+    { "source": "/dev", "destination": "/dev.html" }
+  ],
+  "redirects": [
+    { "source": "/studio", "destination": "/dev", "permanent": true },
+    { "source": "/studio.html", "destination": "/dev", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
