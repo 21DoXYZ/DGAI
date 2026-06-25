@@ -177,6 +177,8 @@
   .foot-links a{color:rgba(243,240,238,.72)}
   .foot-links a:hover{color:var(--on-ink)}
   .foot-copy{font-size:13px;color:rgba(243,240,238,.5);margin-top:20px}
+  .sticky-cta{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60}
+  .sticky-cta .btn{width:100%;box-shadow:0 14px 34px -8px rgba(20,20,19,.4)}
 
   @media(max-width:980px){
     .grid-3,.grid-2,.grid-4,.steps,.models,.why{grid-template-columns:1fr 1fr}
@@ -185,6 +187,8 @@
   @media(max-width:640px){
     section{padding:72px 0}
     .wrap{padding:0 20px}
+    .nav-cta .btn-primary{display:none}
+    .sticky-cta{display:block}
     .grid-3,.grid-2,.grid-4,.steps,.models,.why{grid-template-columns:1fr}
     .approach,.cta-band{padding:34px 24px}
     .cta-band{flex-direction:column;align-items:flex-start}
@@ -505,6 +509,8 @@
     </div>
   </div>
 </section>
+
+<div class="sticky-cta"><a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a></div>
 
 <footer>
   <div class="wrap">
