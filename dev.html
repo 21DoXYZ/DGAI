@@ -99,17 +99,11 @@
   .cap p{color:var(--muted);font-size:16px;line-height:1.6}
 
   /* featured niche */
-  .niche-featured{border:1.5px solid var(--accent);border-radius:var(--radius-lg);background:var(--panel);box-shadow:var(--shadow);padding:52px;margin-bottom:24px;display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:start}
-  .niche-featured .tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(207,69,0,.22);padding:7px 15px;border-radius:100px;margin-bottom:20px}
-  .niche-featured h3{font-size:clamp(26px,3.2vw,34px);letter-spacing:-.02em;margin-bottom:16px}
-  .niche-featured .ctx{color:var(--muted-2);font-size:15px;margin-bottom:18px;line-height:1.55}
-  .niche-featured .pain{color:var(--muted);font-size:17px;line-height:1.6}
-  .niche-featured .k{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted-2);margin-bottom:16px}
-  .niche-featured ul{list-style:none;display:grid;gap:14px;margin-bottom:26px}
-  .niche-featured li{position:relative;padding-left:34px;font-size:16px;color:var(--text);line-height:1.55}
-  .niche-featured li b{font-weight:600}
-  .niche-featured li::before{content:"";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:13px;background-repeat:no-repeat;background-position:center}
-  .niche-featured .offer{font-size:16px;font-weight:500;color:var(--text);border-left:3px solid var(--accent);padding-left:16px;margin-bottom:26px;line-height:1.55}
+  .seg-aux{grid-column:1 / -1;display:flex;align-items:flex-start;gap:18px;padding:26px 30px;border:1px dashed var(--line);border-radius:var(--radius);background:transparent}
+  .seg-aux .ic{flex:none;width:46px;height:46px}
+  .seg-aux .ic svg{width:21px;height:21px}
+  .seg-aux h3{font-size:17px;margin-bottom:5px}
+  .seg-aux p{color:var(--muted);font-size:15.5px;line-height:1.55}
 
   /* segment cards */
   .seg{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);display:flex;flex-direction:column;transition:.25s}
@@ -220,7 +214,7 @@
 <section class="hero wrap">
   <span class="badge" data-en="Studio 2pizza.team">Студия 2pizza.team</span>
   <h1 data-en="The team behind Retivo - and your custom <span style='color:var(--accent)'>AI/ML development</span>">Команда, которая сделала Retivo - и ваша кастомная <span style="color:var(--accent)">AI/ML-разработка</span></h1>
-  <p class="lead" data-en="Retivo is one of our products. The 2pizza.team studio closes AI/ML engineering and custom development for iGaming - on top of your data. We pick a niche where speed and clean data matter, and go deep.">Retivo - один из наших продуктов. Студия 2pizza.team закрывает AI/ML-инжиниринг и кастомную разработку для iGaming - поверх ваших данных. Берём нишу, где важны скорость и чистые данные, и углубляемся.</p>
+  <p class="lead" data-en="Retivo is one of our products. The 2pizza.team studio closes AI/ML engineering and custom development for iGaming - on top of your data. We work across the whole market, by priority: where there's more money and where our experience is stronger.">Retivo - один из наших продуктов. Студия 2pizza.team закрывает AI/ML-инжиниринг и кастомную разработку для iGaming - поверх ваших данных. Работаем по всему рынку, по приоритету: где больше денег и где сильнее наши наработки.</p>
   <div class="hero-cta">
     <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
     <a href="#segments" class="btn btn-ghost" data-en="See segments">Смотреть сегменты</a>
@@ -238,13 +232,13 @@
   <div class="sec-head">
     <span class="eyebrow" data-en="What we do">Что делаем</span>
     <h2 data-en="Six classes of tasks - full-stack">Шесть классов задач - full-stack</h2>
-    <p class="lead" data-en="Not 'we do everything'. A defined range - from ML decisioning to integrations and team augmentation.">Не «делаем всё». Понятный охват - от ML-decisioning до интеграций и усиления команды.</p>
+    <p class="lead" data-en="Not 'we do everything'. A defined range - from ML decisioning to integrations and team augmentation.">Не «делаем всё». Понятный охват - от ML-решений до интеграций и усиления команды.</p>
   </div>
   <div class="grid grid-3">
     <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></svg></div>
-      <h3 data-en="Retention &amp; decisioning (ML)">Retention &amp; decisioning (ML)</h3>
-      <p data-en="Churn and value scoring per player, offer timing and selection, VIP retention. A decision, not a cohort.">Скоринг оттока и ценности по каждому игроку, тайминг и выбор оффера, VIP-ретеншн. Решение, а не когорта.</p>
+      <h3 data-en="Retention &amp; decisions (ML)">Ретеншн и решения по игроку (ML)</h3>
+      <p data-en="Churn and value scoring per player, offer timing and selection, VIP retention. A decision, not a cohort.">Скоринг оттока и ценности по каждому игроку, тайминг и выбор оффера, VIP-ретеншн. Решение по игроку, а не по когорте.</p>
     </div>
     <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.6 7.2 9.6 10M17.4 7.2 14.4 10M6.6 16.8 9.6 14M17.4 16.8 14.4 14"/></svg></div>
@@ -268,8 +262,8 @@
     </div>
     <div class="cap">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.4"/><path d="M18 14.2a5.5 5.5 0 0 1 2.5 4.6"/></svg></div>
-      <h3 data-en="Staff augmentation">Staff augmentation</h3>
-      <p data-en="Reinforce your team with engineers and ML for the project - without bloating headcount.">Усиление вашей команды инженерами и ML под проект - без раздувания штата.</p>
+      <h3 data-en="Team augmentation">Усиление команды</h3>
+      <p data-en="Reinforce your team with engineers and ML for the project - without bloating headcount.">Усиливаем вашу команду инженерами и ML под проект - без раздувания штата.</p>
     </div>
   </div>
 </section>
@@ -279,70 +273,63 @@
   <div class="sec-head">
     <span class="eyebrow" data-en="iGaming segments">Сегменты iGaming</span>
     <h2 data-en="Who we work with - and with what">Кому и с чем заходим</h2>
-    <p class="lead" data-en="We lead with one niche where speed and clean data matter most - and cover the rest of the market around it.">Заходим в одну нишу, где скорость и чистые данные критичны - и закрываем остальной рынок вокруг неё.</p>
-  </div>
-
-  <div class="niche-featured">
-    <div>
-      <span class="tag" data-en="Focus niche">Фокус-ниша</span>
-      <h3 data-en="Affiliates &amp; media-buying teams">Аффилиаты и медиабаинг-команды</h3>
-      <p class="ctx" data-en="There are more such teams than casinos, they're more technical, and they spin big LV (rebate, % of revenue).">Команд больше, чем казино, они технологичнее и крутят большие LV (ребейт, % от дохода).</p>
-      <p class="pain" data-en="Manual campaigns and creatives don't scale. You need content volume per GEO - and end-to-end analytics to see what actually works.">Ручные кампании и креативы не масштабируются. Нужен объём контента под GEO - и сквозная аналитика, чтобы видеть, что реально работает.</p>
-    </div>
-    <div>
-      <div class="k" data-en="What we build">Что делаем</div>
-      <ul>
-        <li data-en="<b>Creative-gen platform</b> with per-GEO adaptation - faster launches, far less manual work">Платформа <b>генерации креативов</b> с адаптацией под GEO - запуски быстрее, ручной работы кратно меньше</li>
-        <li data-en="<b>Video / UBT studio</b> - clips at volume, cheap and fast">Видео / <b>UBT-студия</b> - ролики под объём, дёшево и быстро</li>
-        <li data-en="<b>End-to-end analytics</b> + media-buying AI agents (L1/L2/L3)">Сквозная аналитика + <b>AI-агенты медиабаинга</b> (L1/L2/L3)</li>
-      </ul>
-      <p class="offer" data-en="Generate and adapt creatives per GEO at volume - launches faster, less by hand. A similar creative platform for buyers we ship in ~2 weeks.">Генерим и адаптируем креативы под GEO в объёме. Похожую платформу креативов для байеров собираем за ~2 недели.</p>
-      <a href="#" data-cta="contact" class="btn btn-primary" data-en="Discuss a project">Обсудить задачу</a>
-    </div>
+    <p class="lead" data-en="By priority - at the top, where there's more money and our experience is stronger.">По приоритету - сверху те, где больше денег и где сильнее наши наработки.</p>
   </div>
 
   <div class="grid grid-2">
     <div class="seg">
-      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><h3 data-en="Game providers / studios">Игровые провайдеры / студии</h3></div>
-      <p class="ctx" data-en="Huge market with recurring revenue - 5-9% of GGR per game, per casino, every month.">Огромный рынок с recurring-доходом - 5-9% от GGR с каждой игры у каждого казино, ежемесячно.</p>
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3 data-en="Operators without a platform">Операторы без платформы</h3></div>
+      <p class="ctx" data-en="Casinos not on a platform that build everything themselves - the pain is hottest here, and we already have a ready product for it: Retivo.">Казино не на платформе, которые всё делают сами - здесь горит сильнее всего, и под это у нас уже есть готовый продукт - Retivo.</p>
       <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Tools and analytics aren't in a modern shape; no real data work or revenue predictions.">Инструменты и аналитика не в современном виде; нет нормальной работы с данными и предсказаний по обороту.</p>
+      <p class="pain" data-en="Expensive manual retention, cohort spam burns bonuses, VIP churn, decisions made by gut feel.">Дорогой ручной ретеншн, когортный спам жжёт бонусы, отток VIP, а решения принимаются на глаз.</p>
+      <div class="k give-k" data-en="What we build">Что делаем</div>
+      <ul>
+        <li data-en="Retivo - a retention CRM with a decision per player">Retivo - retention-CRM с решением по каждому игроку</li>
+        <li data-en="Analytics and a 360 player profile">Аналитика и карточка игрока 360°</li>
+        <li data-en="Upgrades for your stack">Доработки под ваш стек</li>
+      </ul>
+    </div>
+    <div class="seg">
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><h3 data-en="Game providers / studios">Игровые провайдеры / студии</h3></div>
+      <p class="ctx" data-en="The biggest recurring revenue in the industry - 5-9% of GGR per game, at every casino, every month.">Самый большой регулярный доход в индустрии - 5-9% от GGR с каждой игры у каждого казино, и так каждый месяц.</p>
+      <div class="k pain-k" data-en="Pain">Боль</div>
+      <p class="pain" data-en="Tools and analytics aren't modern; no proper data work or revenue forecasts.">Инструменты и аналитика устарели; нет нормальной работы с данными и прогнозов по обороту.</p>
       <div class="k give-k" data-en="What we build">Что делаем</div>
       <ul>
         <li data-en="Modern tools and dashboards for the studio">Современные инструменты и дашборды для студии</li>
-        <li data-en="Revenue and game predictions on your data">Предсказания по обороту и играм на ваших данных</li>
-        <li data-en="Custom - or a product to scale to market">Кастом - или продукт под масштаб на рынок</li>
+        <li data-en="Forecasts on revenue and games on your data">Прогнозы по обороту и играм на ваших данных</li>
+        <li data-en="A custom solution or a product to sell to the market">Кастомное решение или продукт под продажу на рынок</li>
       </ul>
     </div>
     <div class="seg">
       <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><h3 data-en="Game aggregators">Агрегаторы игр</h3></div>
-      <p class="ctx" data-en="Distribute games to casinos and earn on turnover - integrations are the core of the business.">Раздают игры казино и зарабатывают на обороте - интеграции это ядро бизнеса.</p>
+      <p class="ctx" data-en="Distribute games to casinos and earn on turnover - integrations are the core of their business.">Раздают игры казино и зарабатывают на обороте - интеграции это ядро их бизнеса.</p>
       <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Integrations and revenue accounting by hand; no convenient view of games and GGR.">Интеграции и учёт оборота вручную; нет удобного среза по играм и GGR.</p>
+      <p class="pain" data-en="Integrations and turnover accounting are done by hand; no convenient breakdown by game and GGR.">Интеграции и учёт оборота - вручную; нет удобного среза по играм и GGR.</p>
       <div class="k give-k" data-en="What we build">Что делаем</div>
       <ul>
         <li data-en="Analytics on games and turnover">Аналитика по играм и обороту</li>
-        <li data-en="Integration and routing automation">Автоматизация интеграций и маршрутизации</li>
-        <li data-en="White-label module into your stack">White-label модуль в ваш стек</li>
+        <li data-en="Automation of integrations and routing">Автоматизация интеграций и маршрутизации</li>
+        <li data-en="A white-label module into your stack">White-label модуль в ваш стек</li>
       </ul>
     </div>
     <div class="seg">
-      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><h3 data-en="Self-built operators">Операторы (self-built)</h3></div>
-      <p class="ctx" data-en="Casinos not on a platform, building everything themselves - the pain burns hottest here.">Казино не на платформе, всё пилят сами - боль горит здесь сильнее всего.</p>
+      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></svg></span><h3 data-en="Affiliates &amp; media-buying">Аффилиаты и медиабаинг</h3></div>
+      <p class="ctx" data-en="There are many such teams, they're more technical than casinos, and big budgets ride on them (rebate, % of revenue).">Команд много, они технологичнее казино, и на них завязаны большие деньги (ребейт, % от дохода).</p>
       <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Expensive manual retention, cohort spam burns bonuses, VIP churn, decisions by gut feel.">Дорогой ручной ретеншн, когортный спам жжёт бонусы, отток VIP, решения на глаз.</p>
+      <p class="pain" data-en="Manual campaigns and creatives don't scale - you need content volume per GEO and analytics to see what really works.">Ручные кампании и креативы не масштабируются - нужен объём контента под GEO и сквозная аналитика, чтобы видеть, что реально работает.</p>
       <div class="k give-k" data-en="What we build">Что делаем</div>
       <ul>
-        <li data-en="Retivo - per-player retention CRM">Retivo - retention-CRM по каждому игроку</li>
-        <li data-en="Analytics and a 360 player profile">Аналитика и карточка игрока 360°</li>
-        <li data-en="Custom built for your stack">Кастом под ваш стек</li>
+        <li data-en="A platform to generate and adapt creatives per GEO">Платформа генерации и адаптации креативов под GEO</li>
+        <li data-en="A video / UBT studio for content at volume">Видео / UBT-студия под объём контента</li>
+        <li data-en="End-to-end analytics and media-buying AI agents">Сквозная аналитика и AI-агенты медиабаинга</li>
       </ul>
     </div>
     <div class="seg">
       <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><h3 data-en="Payments / cascades">Платёжки / каскады</h3></div>
-      <p class="ctx" data-en="Payments are run by hand and are a zone of risk - conversion and fraud directly hit revenue.">Платежи гоняют вручную, это зона риска - конверсия и фрод бьют по выручке напрямую.</p>
+      <p class="ctx" data-en="Payments are often run by hand - a zone of risk: conversion and fraud hit revenue directly.">Платежи часто гоняют вручную - это зона риска: конверсия и фрод бьют по выручке напрямую.</p>
       <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Manual cascades, low conversion, fraud, chargebacks and frozen accounts.">Ручные каскады, низкая конверсия, фрод, чарджбэки и заморозки счетов.</p>
+      <p class="pain" data-en="Manual cascades, low conversion, fraud, payment reversals and frozen accounts.">Ручные каскады, низкая конверсия, фрод, возвраты платежей и заморозки счетов.</p>
       <div class="k give-k" data-en="What we build">Что делаем</div>
       <ul>
         <li data-en="Cascade automation and higher conversion">Автоматизация каскадов и рост конверсии</li>
@@ -352,27 +339,22 @@
     </div>
     <div class="seg">
       <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span><h3 data-en="Industry events">Ивенты индустрии</h3></div>
-      <p class="ctx" data-en="~a dozen big conferences worldwide (Europe, Cyprus, America) - a separate software category.">~десяток крупных конференций по миру (Европа, Кипр, Америка) - отдельная категория софта.</p>
+      <p class="ctx" data-en="About a dozen big conferences worldwide (Europe, Cyprus, America) - a separate software category.">Около десятка крупных конференций по миру (Европа, Кипр, Америка) - это отдельная категория софта.</p>
       <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Working with attendees and event data by hand.">Работа с участниками и данными ивента вручную.</p>
+      <p class="pain" data-en="Work with attendees and event data is done by hand.">Работа с участниками и данными ивента идёт вручную.</p>
       <div class="k give-k" data-en="What we build">Что делаем</div>
       <ul>
-        <li data-en="Software for attendees and data">Софт под участников и данные</li>
-        <li data-en="Networking and matchmaking tools">Инструменты нетворкинга и мэтчинга</li>
+        <li data-en="Software for attendees and data">Софт для участников и работы с данными</li>
+        <li data-en="Networking and contact-matching tools">Инструменты нетворкинга и подбора контактов</li>
         <li data-en="Analytics on the event">Аналитика по ивенту</li>
       </ul>
     </div>
-    <div class="seg">
-      <div class="top"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.3-3 7.3-7 8.8-4-1.5-7-4.5-7-8.8V5.8L12 3Z"/><path d="m9 11.5 2 2 4-4"/></svg></span><h3 data-en="Compliance / licensing">Комплаенс / лицензирование</h3></div>
-      <p class="ctx" data-en="Auxiliary, on request - not the speed and volume of the core B2B, but we can simplify it.">Вспомогательное, по запросу - не та скорость и объёмы, что в ядре B2B, но упростить можем.</p>
-      <div class="k pain-k" data-en="Pain">Боль</div>
-      <p class="pain" data-en="Licensing and account opening are slow and fully manual.">Лицензирование и открытие счетов медленно и полностью вручную.</p>
-      <div class="k give-k" data-en="What we build">Что делаем</div>
-      <ul>
-        <li data-en="Streamline the working process">Упрощаем рабочий процесс</li>
-        <li data-en="Document and status automation">Автоматизация документов и статусов</li>
-        <li data-en="Pointwise, on request">Точечно, по запросу</li>
-      </ul>
+    <div class="seg-aux">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.3-3 7.3-7 8.8-4-1.5-7-4.5-7-8.8V5.8L12 3Z"/><path d="m9 11.5 2 2 4-4"/></svg></span>
+      <div>
+        <h3 data-en="Compliance &amp; licensing - auxiliary">Комплаенс и лицензирование - вспомогательно</h3>
+        <p data-en="Not the speed and volume of the core B2B, but on request we streamline the workflow: document and status automation.">Не та скорость и объёмы, что в основном B2B, но по запросу упрощаем рабочие процессы: автоматизация документов и статусов.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -416,7 +398,7 @@
       <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><span data-en="Payments &amp; infrastructure">Платежи и инфраструктура</span></h3>
       <ul>
         <li data-en="<b>Payment cascades</b> <span>- higher conversion</span>"><b>Платёжные каскады</b> <span>- выше конверсия</span></li>
-        <li data-en="<b>Anti-fraud &amp; risk signals</b> <span>- fewer freezes and chargebacks</span>"><b>Антифрод и риск-сигналы</b> <span>- меньше заморозок и чарджбэков</span></li>
+        <li data-en="<b>Anti-fraud &amp; risk signals</b> <span>- fewer freezes and chargebacks</span>"><b>Антифрод и риск-сигналы</b> <span>- меньше заморозок и возвратов платежей</span></li>
         <li data-en="<b>White-label ML module</b> <span>- into a platform / PAM stack</span>"><b>White-label ML-модуль</b> <span>- в стек платформы / PAM</span></li>
         <li data-en="<b>Backend &amp; API integrations</b> <span>- platforms and payments</span>"><b>Бэкенд и API-интеграции</b> <span>- платформы и платёжки</span></li>
       </ul>
@@ -462,7 +444,7 @@
 <section class="wrap">
   <div class="sec-head">
     <span class="eyebrow" data-en="Why us">Почему мы</span>
-    <h2 data-en="Speed, ML and a lean team">Скорость, ML и lean-команда</h2>
+    <h2 data-en="Speed, ML and a lean team">Скорость, ML и небольшая команда</h2>
   </div>
   <div class="why">
     <div class="wtile">
@@ -477,8 +459,8 @@
     </div>
     <div class="wtile">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 4.5a3.2 3.2 0 0 1 0 6.4"/></svg></div>
-      <h3 data-en="Lean team">Lean-команда</h3>
-      <p data-en="We count unit economics - ours and yours. No bloated costs, no startup theater.">Считаем юнит-экономику - свою и вашу. Без раздутых костов и стартап-театра.</p>
+      <h3 data-en="Lean team">Небольшая команда</h3>
+      <p data-en="We count unit economics - ours and yours. No bloated costs, no startup theater.">Считаем юнит-экономику - свою и вашу. Без раздутых расходов и лишней шумихи.</p>
     </div>
     <div class="wtile">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" transform="scale(0.83) translate(2.4 -1)"/><circle cx="12" cy="4" r="2" fill="currentColor" stroke="none"/></svg></div>
