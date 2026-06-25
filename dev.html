@@ -139,6 +139,19 @@
   .niche-featured li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
   .niche-featured .offer{font-size:15px;font-weight:500;color:var(--text);border-left:3px solid var(--accent);padding-left:14px;margin-bottom:20px;line-height:1.5}
   @media(max-width:840px){.niche-featured{grid-template-columns:1fr;gap:22px;padding:28px 22px}}
+  /* build list */
+  .build{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px}
+  .build .item{position:relative;padding-left:32px;font-size:15px;line-height:1.5;color:var(--muted)}
+  .build .item b{color:var(--text);font-weight:600}
+  .build .item::before{content:"";position:absolute;left:0;top:1px;width:21px;height:21px;border-radius:50%;background:var(--accent-soft);border:1px solid rgba(207,69,0,.25);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23CF4500' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");background-size:12px;background-repeat:no-repeat;background-position:center}
+  /* models */
+  .models{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .model{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .model .n{font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  .model h3{font-size:19px;margin-bottom:8px}
+  .model p{color:var(--muted);font-size:14.5px;line-height:1.5}
+  .disc{margin-top:20px;font-size:14.5px;color:var(--muted);border-left:3px solid var(--accent);padding-left:14px;line-height:1.55}
+  @media(max-width:680px){.build,.models{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -242,9 +255,14 @@
 
   <div class="grid grid-3">
     <div class="niche">
-      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span data-en="Game providers / aggregators">Игровые провайдеры / агрегаторы</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Tools and analytics aren't in a modern, convenient shape; no real data work or predictions.">Инструменты и аналитика не в современном виде; нет работы с данными и предсказаний.</p></div>
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m10 9 5 3-5 3V9Z"/></svg></span><span data-en="Game providers / studios">Игровые провайдеры / студии</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Tools and analytics aren't in a modern shape; no real data work or predictions on revenue.">Инструменты и аналитика не в современном виде; нет работы с данными и предсказаний по обороту.</p></div>
       <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Tools, dashboards and predictions; custom or a product to scale to market.">Инструменты, дашборды и предсказания; кастом или продукт под масштаб.</p></div>
+    </div>
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></span><span data-en="Game aggregators">Агрегаторы игр</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Integrations and revenue accounting by hand; no convenient view of games and GGR.">Интеграции и учёт оборота руками; нет удобного среза по играм и GGR.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Analytics on games and revenue, automation, a white-label module into your stack.">Аналитика по играм и обороту, автоматизация, white-label модуль в ваш стек.</p></div>
     </div>
     <div class="niche">
       <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></span><span data-en="Self-built operators">Операторы (self-built)</span></h3>
@@ -253,10 +271,61 @@
     </div>
     <div class="niche">
       <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><span data-en="Payments / cascades">Платёжки / каскады</span></h3>
-      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Manual cascades, low conversion, fraud and frozen accounts.">Ручные каскады, низкая конверсия, фрод и заморозки счетов.</p></div>
-      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Cascade automation, higher payment conversion, fraud signals.">Автоматизация каскадов, рост конверсии, сигналы по фроду.</p></div>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Manual cascades, low conversion, fraud, chargebacks and frozen accounts.">Ручные каскады, низкая конверсия, фрод, чарджбэки и заморозки счетов.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Cascade automation, higher conversion, fraud and risk signals.">Автоматизация каскадов, рост конверсии, сигналы по фроду и рискам.</p></div>
+    </div>
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span><span data-en="Industry events">Ивенты индустрии</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Working with attendees and data by hand; ~a dozen big conferences worldwide.">Работа с участниками и данными вручную; ~десяток крупных конф по миру.</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="Software for attendees, data and networking - a separate category.">Софт под участников, данные и нетворкинг - отдельная категория.</p></div>
+    </div>
+    <div class="niche">
+      <h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.3-3 7.3-7 8.8-4-1.5-7-4.5-7-8.8V5.8L12 3Z"/><path d="m9 11.5 2 2 4-4"/></svg></span><span data-en="Compliance / licensing">Комплаенс / лицензирование</span></h3>
+      <div class="row pain"><div class="k" data-en="Pain">Боль</div><p data-en="Licensing and account opening are slow and manual (auxiliary).">Лицензирование и открытие счетов медленно и вручную (вспомогательное).</p></div>
+      <div class="row give"><div class="k" data-en="We give">Даём</div><p data-en="We streamline the workflow - pointwise, on request.">Упрощаем рабочие процессы - точечно, по запросу.</p></div>
     </div>
   </div>
+</section>
+
+<!-- WHAT WE CAN BUILD -->
+<section id="build" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-en="What we build">Что можем построить</span>
+    <h2 data-en="Concrete things we ship">Конкретно - что собираем</h2>
+    <p class="lead" data-en="From idea to a finished product in weeks - not alpha/beta. Examples below.">От идеи до готового продукта - недели, не альфа/бета. Примеры ниже.</p>
+  </div>
+  <div class="build">
+    <div class="item" data-en="<b>Creative-gen platform</b> - per-GEO adaptation, at volume"><b>Платформа генерации креативов</b> - адаптация под GEO, объём</div>
+    <div class="item" data-en="<b>Video / UBT studio</b> - clips at volume, cheap and fast"><b>Видео / UBT-студия</b> - ролики под объём, дёшево и быстро</div>
+    <div class="item" data-en="<b>Retention CRM (Retivo)</b> - scoring and a decision per player"><b>Retention-CRM (Retivo)</b> - скоринг и решение по каждому игроку</div>
+    <div class="item" data-en="<b>End-to-end analytics &amp; BI</b> - dashboards, segmentation, 360 profile"><b>Сквозная аналитика и BI</b> - дашборды, сегментация, профиль 360°</div>
+    <div class="item" data-en="<b>Predictions on your data</b> - churn, value, demand, LTV"><b>Предсказания на ваших данных</b> - отток, ценность, спрос, LTV</div>
+    <div class="item" data-en="<b>Media-buying AI agents</b> - L1 recommend, L2 confirm, L3 autopilot by KPI"><b>AI-агенты медиабаинга</b> - L1 рекомендации, L2 подтверждение, L3 автопилот по KPI</div>
+    <div class="item" data-en="<b>Payment cascades + anti-fraud</b> - higher conversion, lower risk"><b>Платёжные каскады + антифрод</b> - выше конверсия, ниже риск</div>
+    <div class="item" data-en="<b>White-label ML module</b> - embedded into a platform / PAM stack"><b>White-label ML-модуль</b> - встраиваем в стек платформы / PAM</div>
+    <div class="item" data-en="<b>Data extraction &amp; integrations</b> - platform/payment APIs, your data in order"><b>Экстракция данных и интеграции</b> - API платформ/платёжек, ваши данные в порядке</div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how" class="wrap">
+  <div class="sec-head">
+    <span class="eyebrow" data-en="How we work">Как работаем</span>
+    <h2 data-en="Two models, one discovery">Две модели, один разбор</h2>
+  </div>
+  <div class="models">
+    <div class="model">
+      <div class="n" data-en="Model A">Модель A</div>
+      <h3 data-en="Custom for you">Кастом под вас</h3>
+      <p data-en="A product or upgrade for a specific task - stays yours.">Продукт или доработка под конкретную задачу - остаётся у вас.</p>
+    </div>
+    <div class="model">
+      <div class="n" data-en="Model B">Модель B</div>
+      <h3 data-en="A product to scale">Продукт под масштаб</h3>
+      <p data-en="A solution you later scale or sell to the market (white-label, revenue share).">Решение, которое вы потом масштабируете или продаёте на рынок (white-label, доля).</p>
+    </div>
+  </div>
+  <p class="disc" data-en="We start with discovery: together we find what's done by hand or is inconvenient, and size it up - just for you or for the market. Idea to finished product - weeks.">Начинаем с разбора: вместе находим, что делается руками или неудобно, и считаем ёмкость - только под вас или под рынок. От идеи до готового продукта - недели.</p>
 </section>
 
 <!-- APPROACH -->
