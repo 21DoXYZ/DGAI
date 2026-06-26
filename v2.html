@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retivo - retention-CRM нового поколения для casino</title>
+<meta name="description" content="AI-native retention CRM для iGaming: решение по каждому игроку на ML, real-time скоринг риска и ценности. Не когортная рассылка, не LLM-галлюцинации.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2316130E'/%3E%3Cpath d='M11.5 23.8A9 9 0 1 1 20.5 23.8' fill='none' stroke='%23F5F2EE' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='7' r='2.4' fill='%23F4A300'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>
+  window.SITE_CONFIG = { brand: "Retivo", telegram: "Moneylong001" };
+</script>
+<style>
+  :root{
+    --bg:#F5F2EE;--bg-2:#FBFAF8;--panel:#FBFAF8;--panel-2:#EFEBE5;
+    --line:rgba(22,19,14,.12);--line-soft:rgba(22,19,14,.06);
+    --text:#16130E;--muted:#5f594f;--muted-2:#8a8377;--ink:#16130E;--on-ink:#F5F2EE;
+    --amber:#F4A300;--amber-deep:#B97A00;--gold:#E0B65A;--amber-soft:rgba(244,163,0,.13);
+    --radius:20px;--radius-lg:34px;--maxw:1200px;
+    --shadow:0 24px 60px -18px rgba(22,19,14,.18);--shadow-sm:0 6px 22px -10px rgba(22,19,14,.14);
+    --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);font-weight:400;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(46% 36% at 88% 0%, rgba(244,163,0,.10), transparent 60%),radial-gradient(40% 34% at 6% 4%, rgba(224,182,90,.08), transparent 60%)}
+  a{color:inherit;text-decoration:none}
+  a,button{-webkit-tap-highlight-color:transparent}
+  ::selection{background:var(--ink);color:var(--on-ink)}
+  :focus-visible{outline:2px dashed var(--ink);outline-offset:3px;border-radius:6px}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:28px;padding-right:28px}
+  section{padding:104px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:20px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}
+  h1,h2,h3,h4{line-height:1.1;letter-spacing:-.02em;font-weight:700;color:var(--text)}
+  h1{font-weight:800;letter-spacing:-.035em}
+  h2{font-size:clamp(30px,4.2vw,48px);line-height:1.05;margin-bottom:20px}
+  .lead{font-size:clamp(18px,2.1vw,21px);line-height:1.6;color:var(--muted);max-width:680px}
+  .amber{color:var(--amber-deep)}
+  .uline{box-shadow:inset 0 -.32em 0 var(--amber-soft)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-.01em;cursor:pointer;padding:15px 30px;border-radius:100px;transition:.2s ease;white-space:nowrap;border:1.5px solid transparent}
+  .btn-primary{color:var(--on-ink);background:var(--ink);border-color:var(--ink)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+  .btn-amber{color:#16130E;background:var(--amber);border-color:var(--amber)}
+  .btn-amber:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(244,163,0,.7)}
+  .btn-ghost{color:var(--text);background:#fff;border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--bg);transform:translateY(-2px)}
+
+  .lang-switch{display:inline-flex;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden}
+  .lang-switch button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:13px;font-weight:600;padding:8px 13px;cursor:pointer;transition:.2s}
+  .lang-switch button.active{background:var(--ink);color:var(--on-ink)}
+
+  header{position:sticky;top:0;z-index:50;padding:16px 0}
+  .nav{display:flex;align-items:center;justify-content:space-between;background:rgba(251,250,248,.82);backdrop-filter:blur(12px);border:1px solid var(--line-soft);border-radius:100px;padding:11px 13px 11px 24px;box-shadow:var(--shadow-sm)}
+  .logo{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:-.03em;color:var(--text)}
+  .logo-mark{width:30px;height:30px;flex:none;display:block}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{color:var(--text);font-size:15px;font-weight:500;transition:.2s}
+  .nav-links a:hover{color:var(--amber-deep)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--text);border-radius:2px}
+  .mobile-menu{display:none}
+
+  /* hero */
+  .hero{padding-top:76px;padding-bottom:60px;text-align:center}
+  .hero h1{font-size:clamp(40px,6.4vw,72px);line-height:1.02;max-width:960px;margin:0 auto 24px}
+  .hero .lead{margin:0 auto 34px;max-width:680px;font-size:clamp(19px,2.3vw,22px)}
+  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .facts{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+  .fact{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--muted);background:#fff;border:1px solid var(--line);padding:9px 17px;border-radius:100px}
+  .fact::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex:none}
+
+  /* trust strip */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0;background:var(--bg-2)}
+  .trust .lbl{text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:22px}
+  .trust-line{text-align:center;max-width:660px;margin:0 auto;color:var(--muted);font-size:15.5px;line-height:1.6}
+
+  .sec-head{max-width:720px;margin-bottom:56px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .grid{display:grid;gap:22px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+
+  /* evolution timeline */
+  .evo{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+  .evo-step{padding:26px 20px;border-right:1px solid var(--line);position:relative}
+  .evo-step:last-child{border-right:none}
+  .evo-step.now{background:var(--amber-soft)}
+  .evo-step .v{font-size:13px;font-weight:700;color:var(--muted-2);letter-spacing:.04em}
+  .evo-step.now .v{color:var(--amber-deep)}
+  .evo-step h4{font-size:15.5px;font-weight:600;margin-top:8px;line-height:1.3}
+  .evo-step .tag{display:inline-block;margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#16130E;background:var(--amber);padding:3px 9px;border-radius:100px}
+
+  /* capability cards */
+  .cap{display:flex;flex-direction:column;gap:15px;padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:.25s}
+  .cap:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .cap:hover .ic{background:var(--amber);border-color:var(--amber);color:#16130E}
+  .ic{flex:none;width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--panel-2);border:1px solid var(--line);color:var(--text);transition:.25s}
+  .ic svg{width:24px;height:24px}
+  .cap h3{font-size:20px;letter-spacing:-.01em}
+  .cap p{color:var(--muted);font-size:15.5px;line-height:1.6}
+
+  /* pillars */
+  .pillar{padding:36px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .pillar .n{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:14px}
+  .pillar h3{font-size:22px;margin-bottom:10px}
+  .pillar p{color:var(--muted);font-size:16px;line-height:1.6}
+
+  /* comparison */
+  .cmp{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel)}
+  .cmp-row{display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:stretch}
+  .cmp-row>div{padding:18px 24px;border-bottom:1px solid var(--line);font-size:15.5px;display:flex;align-items:center}
+  .cmp-row:last-child>div{border-bottom:none}
+  .cmp-head>div{font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;background:var(--panel-2)}
+  .cmp-head .us{color:var(--amber-deep);background:var(--amber-soft)}
+  .cmp-row .param{color:var(--text);font-weight:600}
+  .cmp-row .old{color:var(--muted-2)}
+  .cmp-row .us{color:var(--text);font-weight:500;background:rgba(244,163,0,.06)}
+  .cmp-row .us::before{content:"";width:16px;height:16px;margin-right:10px;flex:none;background:var(--amber);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/contain no-repeat}
+
+  /* real-time live card */
+  .live-wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+  .live-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+  .live-head{display:flex;align-items:flex-start;gap:9px;font-size:12.5px;font-weight:700;color:var(--amber-deep);text-transform:uppercase;letter-spacing:.05em}
+  .live-head .t{margin-left:auto;color:var(--muted-2);font-weight:500;text-transform:none;letter-spacing:0;white-space:nowrap}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--amber);animation:pulse 1.8s infinite;margin-top:2px}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(244,163,0,.5)}70%{box-shadow:0 0 0 11px rgba(244,163,0,0)}100%{box-shadow:0 0 0 0 rgba(244,163,0,0)}}
+  .live-id{display:flex;align-items:center;gap:13px;margin:20px 0 18px;flex-wrap:wrap;row-gap:9px}
+  .live-av{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:600;color:var(--on-ink);background:var(--ink);font-variant-numeric:tabular-nums}
+  .live-name{font-weight:600;font-size:16px}
+  .live-sub{color:var(--muted);font-size:13px}
+  .live-badge{margin-left:auto;font-size:11px;font-weight:600;color:#16130E;background:var(--amber-soft);border:1px solid rgba(244,163,0,.35);padding:4px 11px;border-radius:100px;white-space:nowrap}
+  .live-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .live-grid>div{background:var(--panel-2);padding:13px 15px;display:flex;flex-direction:column;gap:3px}
+  .live-grid span{color:var(--muted);font-size:12.5px}
+  .live-grid b{font-size:16px;font-weight:600;font-variant-numeric:tabular-nums}
+  .live-rec{margin-top:16px;border:1px dashed var(--amber);border-radius:14px;padding:16px;background:var(--amber-soft)}
+  .live-rec .rh{font-size:13px;font-weight:700;color:var(--amber-deep);margin-bottom:7px}
+  .live-rec p{color:var(--text);font-size:14px;margin-bottom:13px;line-height:1.45}
+  .live-rec .btn{width:100%;padding:11px}
+  .live-points{display:grid;gap:16px}
+  .live-points .row{display:flex;gap:14px;align-items:flex-start}
+  .live-points .ic{width:46px;height:46px}
+  .live-points .ic svg{width:21px;height:21px}
+  .live-points h3{font-size:17px;margin-bottom:4px}
+  .live-points p{color:var(--muted);font-size:15px;line-height:1.5}
+
+  /* outcomes */
+  .out{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ocard{padding:32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .ocard .big{font-size:34px;font-weight:800;letter-spacing:-.02em;color:var(--amber-deep)}
+  .ocard h3{font-size:17px;margin:8px 0 6px}
+  .ocard p{color:var(--muted);font-size:14.5px;line-height:1.5}
+  .note{margin-top:24px;font-size:14px;color:var(--muted-2);border-left:3px solid var(--amber);padding-left:14px;line-height:1.55;max-width:760px}
+
+  /* integrations */
+  .integ{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .icard{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+  .icard h3{font-size:18px;margin-bottom:8px;display:flex;align-items:center;gap:11px}
+  .icard h3 .ic{width:42px;height:42px}
+  .icard h3 .ic svg{width:20px;height:20px}
+  .icard p{color:var(--muted);font-size:15px;line-height:1.55}
+
+  /* modules kicker + steps */
+  .cap .kick{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-deep)}
+  .step{padding:34px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);transition:.25s}
+  .step:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+  .step .n{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;background:var(--ink);color:var(--on-ink);font-weight:700;font-size:15px;margin-bottom:16px;font-variant-numeric:tabular-nums}
+  .step .when{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:9px}
+  .step h3{font-size:19px;margin-bottom:9px;letter-spacing:-.01em}
+  .step p{color:var(--muted);font-size:15px;line-height:1.6}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto;display:grid;gap:12px}
+  .qa{border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+  .qa-q{width:100%;text-align:left;background:none;border:none;color:var(--text);cursor:pointer;padding:20px 24px;font-size:16.5px;font-weight:600;font-family:inherit;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  .qa-q .sign{flex:none;font-size:22px;color:var(--amber-deep);transition:.25s;line-height:1}
+  .qa.open .qa-q .sign{transform:rotate(45deg)}
+  .qa-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .qa-a p{padding:0 24px 22px;color:var(--muted);font-size:15px;line-height:1.6}
+
+  /* cta band */
+  .cta-band{background:var(--ink);color:var(--on-ink);border-radius:var(--radius-lg);padding:60px;text-align:center}
+  .cta-band h2{color:var(--on-ink);margin-bottom:14px}
+  .cta-band p{color:rgba(245,242,238,.72);font-size:18px;max-width:560px;margin:0 auto 30px;line-height:1.55}
+  .cta-band .btn-amber{margin:0 auto}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--on-ink);padding:64px 0 40px;margin-top:8px}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:32px;padding-bottom:36px;border-bottom:1px solid rgba(245,242,238,.14)}
+  .foot-brand .logo{color:var(--on-ink);margin-bottom:14px}
+  .foot-brand p{color:rgba(245,242,238,.6);font-size:14px;line-height:1.55;max-width:320px}
+  .foot-col h4{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,242,238,.5);margin-bottom:15px}
+  .foot-col a{display:block;color:rgba(245,242,238,.78);font-size:14.5px;padding:5px 0}
+  .foot-col a:hover{color:var(--on-ink)}
+  .foot-bottom{padding-top:26px;font-size:13px;color:rgba(245,242,238,.5)}
+
+  .sticky-cta{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:60}
+  .sticky-cta .btn{width:100%;box-shadow:0 14px 34px -8px rgba(22,19,14,.4)}
+
+  .reveal{transition:opacity .7s ease,transform .7s ease}
+  .js .reveal{opacity:0;transform:translateY(24px)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:1080px){
+    .nav-links{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:none;position:fixed;inset:84px 12px auto 12px;z-index:49;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 18px 20px;flex-direction:column;gap:2px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{padding:13px 4px;color:var(--text);font-size:16px;border-bottom:1px solid var(--line)}
+    .mobile-menu a:last-child{border-bottom:none}
+    .mobile-menu .btn{margin-top:14px}
+  }
+  @media(max-width:920px){
+    .grid-3,.grid-2,.out,.integ,.live-wrap{grid-template-columns:1fr}
+    .evo{grid-template-columns:1fr 1fr}
+    .evo-step{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .foot-brand{grid-column:1 / -1}
+  }
+  @media(max-width:640px){
+    section{padding:68px 0}
+    .wrap{padding-left:20px;padding-right:20px}
+    .nav-cta .btn-primary{display:none}
+    .evo{grid-template-columns:1fr}
+    .cmp-row{grid-template-columns:1fr}
+    .cmp-row>div{border-bottom:1px solid var(--line)}
+    .cmp-row .param{font-weight:700;background:var(--panel-2)}
+    .cmp-head{display:none}
+    .cta-band{padding:38px 24px}
+    .cap,.pillar,.ocard,.icard,.step{padding:28px 24px}
+    .sticky-cta{display:block}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#16130E"/><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" fill="none" stroke="#F5F2EE" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2.4" fill="#F4A300"/></svg></span><span data-brand>Retivo</span></a>
+    <nav class="nav-links">
+      <a href="#modules" data-en="Modules">Модули</a>
+      <a href="#product" data-en="Product">Возможности</a>
+      <a href="#different" data-en="Why us">Чем отличаемся</a>
+      <a href="#realtime" data-en="Real-time">Real-time</a>
+      <a href="#regulated" data-en="Regulations">Регуляции</a>
+      <a href="#faq" data-en="FAQ">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch"><button type="button" data-lang="ru" class="active">RU</button><button type="button" data-lang="en">EN</button></div>
+      <a href="#demo" data-cta class="btn btn-primary" data-en="Book a demo">Записаться на демо</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#modules" data-en="Modules">Модули</a>
+    <a href="#product" data-en="Product">Возможности</a>
+    <a href="#different" data-en="Why us">Чем отличаемся</a>
+    <a href="#realtime" data-en="Real-time">Real-time</a>
+    <a href="#regulated" data-en="Regulations">Регуляции</a>
+    <a href="#faq" data-en="FAQ">FAQ</a>
+    <a href="#demo" data-cta class="btn btn-primary" data-en="Book a demo">Записаться на демо</a>
+  </div>
+</header>
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <span class="eyebrow" data-en="Retention CRM">Retention CRM</span>
+  <h1 data-en="Retention CRM that decides per <span class='uline'>each player</span>">Retention-CRM, которая решает по <span class="uline">каждому игроку</span></h1>
+  <p class="lead" data-en="An AI-native CRM for casino: ML scores churn risk and value for every player in real time, and tells you who to retain and who to reactivate. Not cohort blasts, not LLM hallucinations.">AI-native CRM для casino: ML в реальном времени скорит риск оттока и ценность каждого игрока и говорит, кого удержать, а кого реактивировать. Не когортная рассылка и не LLM-галлюцинации.</p>
+  <div class="hero-cta">
+    <a href="#demo" data-cta class="btn btn-amber" data-en="Book a demo">Записаться на демо</a>
+    <a href="#product" class="btn btn-ghost" data-en="See the product">Смотреть возможности</a>
+  </div>
+  <div class="facts reveal">
+    <span class="fact" data-en="ML, not LLM in money">ML, а не LLM в деньгах</span>
+    <span class="fact" data-en="a decision per player">решение по игроку</span>
+    <span class="fact" data-en="real-time scoring">real-time скоринг</span>
+    <span class="fact" data-en="8 forecast horizons">8 горизонтов прогноза</span>
+  </div>
+</section>
+
+<!-- TRUST (honest, no empty logos) -->
+<div class="trust">
+  <div class="wrap">
+    <p class="trust-line" data-en="Currently in private pilots with casino operators. We'll add public logos and cases after the first holdout measurements.">Сейчас в закрытых пилотах у операторов casino. Публичные логотипы и кейсы добавим после первых холдаут-замеров.</p>
+  </div>
+</div>
+
+<!-- EVOLUTION -->
+<section id="evolution" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Built for what's next">Сделано на вырост</span>
+    <h2 data-en="From mass blasts to a decision per player">От массовых рассылок - к решению по каждому игроку</h2>
+    <p class="lead" data-en="Retention has been evolving for years. Most operators are still stuck at cohorts. Retivo is the per-player ML generation.">Ретеншн развивается годами. Большинство операторов застряли на когортах. Retivo - поколение per-player ML.</p>
+  </div>
+  <div class="evo reveal">
+    <div class="evo-step"><div class="v">1.0</div><h4 data-en="Mass blasts">Массовые рассылки</h4></div>
+    <div class="evo-step"><div class="v">2.0</div><h4 data-en="Cohorts">Когорты</h4></div>
+    <div class="evo-step"><div class="v">3.0</div><h4 data-en="Manual segments">Ручные сегменты</h4></div>
+    <div class="evo-step"><div class="v">4.0</div><h4 data-en="LLM-assisted">LLM-ассист</h4></div>
+    <div class="evo-step now"><div class="v">5.0</div><h4 data-en="Per-player ML decisions">Решение по игроку на ML</h4><span class="tag">Retivo</span></div>
+    <div class="evo-step"><div class="v">6.0</div><h4 data-en="Autonomous retention">Автономный retention</h4></div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section id="modules" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Modules">Модули</span>
+    <h2 data-en="One product, three modules">Один продукт, три модуля</h2>
+    <p class="lead" data-en="All three run on a single player profile and one data stream - not a zoo of disconnected tools.">Все три работают на одной карточке игрока и одном потоке данных - не зоопарк из разных инструментов.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg></div><span class="kick" data-en="Scoring">Скоринг</span><h3 data-en="Risk &amp; value engine">Движок риска и ценности</h3><p data-en="ML scores churn, reactivation and repeat-deposit probability and predicted LTV for every player.">ML скорит риск оттока, реактивацию, повторный депозит и predicted LTV по каждому игроку.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none"/></svg></div><span class="kick" data-en="Decisions">Решения</span><h3 data-en="Decisions &amp; playbooks">Решения и сценарии</h3><p data-en="Who to retain, who to reactivate, which offer and channel - agents propose, you stay in control.">Кого удержать, кого реактивировать, какой оффер и канал - агенты предлагают, контроль за вами.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 5-5"/></svg></div><span class="kick" data-en="Next best action">Рекомендации</span><h3 data-en="Action &amp; closed loop">Действие и замкнутый цикл</h3><p data-en="A concrete action in one click from the profile, then full effect analytics on every message.">Конкретное действие в один клик из карточки и полная аналитика эффекта по каждой коммуникации.</p></div>
+  </div>
+</section>
+
+<!-- PRODUCT / capabilities -->
+<section id="product" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="What's inside">Что внутри</span>
+    <h2 data-en="Player profile, scoring and a concrete action">Карточка игрока, скоринг и конкретное действие</h2>
+    <p class="lead" data-en="We aggregate raw platform and payment data into one profile and turn it into a decision - per player, not per cohort.">Собираем сырые данные платформы и платежей в одну карточку и превращаем в решение - по игроку, а не по когорте.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.2a3.4 3.4 0 0 1 6.4 0"/><path d="M15.5 10h3M15.5 13.5h3"/></svg></div><h3 data-en="Unified player profile">Единая карточка игрока</h3><p data-en="Bets, deposits, bonuses and wagering, GEO, payment method, full activity history - in one row.">Ставки, депозиты, бонусы и отыгрыш, GEO, метод оплаты, вся история активности - в одной строке.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5l5.5-5.5 3.5 3.5L21 6"/><path d="M16 6h5v5"/></svg></div><h3 data-en="Risk &amp; value scoring">Скоринг риска и ценности</h3><p data-en="Churn, reactivation and repeat-deposit probability and predicted LTV across 8 horizons (1 to 120 days).">Вероятность оттока, реактивации, повторного депозита и predicted LTV на 8 горизонтах (1-120 дней).</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor" stroke="none"/></svg></div><h3 data-en="A decision per player">Решение по каждому игроку</h3><p data-en="Retain or reactivate, which offer, which channel and when.">Удержать или реактивировать, какой оффер, какой канал и в какой момент.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10H9l-4 3.5v-3.5H4Z"/><path d="M8 10h8M8 13h5"/></svg></div><h3 data-en="The right channel">Нужный канал</h3><p data-en="WhatsApp and Telegram (2-way), SMS, email, AI calls - chosen by GEO and player type.">WhatsApp и Telegram (2-way), SMS, email, AI-звонки - выбор под GEO и психотип игрока.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-13.7-5.3L3 9"/><path d="M3 4v5h5"/><path d="M4 13a8 8 0 0 0 13.7 5.3L21 15"/><path d="M21 20v-5h-5"/></svg></div><h3 data-en="Closed-loop analytics">Замкнутая аналитика</h3><p data-en="Open, click, bonus, deposit, result - effectiveness of every channel, offer and campaign.">Открытие, переход, бонус, депозит, результат - эффективность каждого канала, оффера и кампании.</p></div>
+    <div class="cap reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></div><h3 data-en="Micro-segmentation">Микросегментация</h3><p data-en="36 behavioral cuts and player archetypes - from broad cohorts down to a single player.">36 поведенческих срезов и архетипы - от общих когорт до единичного игрока.</p></div>
+  </div>
+</section>
+
+<!-- DIFFERENT (3 pillars) -->
+<section id="different" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="What sets us apart">Чем отличаемся</span>
+    <h2 data-en="Three things that change the game">Три вещи, которые меняют игру</h2>
+  </div>
+  <div class="grid grid-3">
+    <div class="pillar reveal"><div class="n">01</div><h3 data-en="ML, not LLM in money">ML, а не LLM в деньгах</h3><p data-en="Money decisions run on verifiable formulas (gradient boosting, RL), not a black box. LLM only at the edges - for copy.">Решения по деньгам - на проверяемых формулах (градиентный бустинг, RL), не «чёрным ящиком». LLM только по краям, для текстов.</p></div>
+    <div class="pillar reveal"><div class="n">02</div><h3 data-en="A decision per player">Решение по игроку</h3><p data-en="Not a blast to thousands. A concrete action for one player: who to retain, who to reactivate, and how.">Не рассылка на тысячи. Конкретное действие по одному игроку: кого удержать, кого реактивировать и как.</p></div>
+    <div class="pillar reveal"><div class="n">03</div><h3 data-en="Real-time">Real-time</h3><p data-en="The system catches the player in the moment they're losing and about to leave - while a decision still changes the outcome.">Система ловит игрока в момент, когда он в минусе и вот-вот уйдёт - пока решение ещё влияет на исход.</p></div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Cohort blast is not the same as per-player ML">Когорта - это не per-player ML</span>
+    <h2 data-en="The difference is at the decision level">Разница - на уровне принятия решения</h2>
+  </div>
+  <div class="cmp reveal">
+    <div class="cmp-row cmp-head"><div class="param" data-en="Parameter">Параметр</div><div class="old" data-en="Cohort blast">Когортная рассылка</div><div class="us">Retivo</div></div>
+    <div class="cmp-row"><div class="param" data-en="Decision unit">Единица решения</div><div class="old" data-en="cohort (thousands)">когорта (тысячи)</div><div class="us" data-en="individual player">отдельный игрок</div></div>
+    <div class="cmp-row"><div class="param" data-en="Engine">Движок</div><div class="old" data-en="rules / blind LLM">правила / LLM вслепую</div><div class="us" data-en="ML + agent oversight">ML + контроль агентов</div></div>
+    <div class="cmp-row"><div class="param" data-en="Timing">Тайминг</div><div class="old" data-en="after-the-fact, by schedule">постфактум, по расписанию</div><div class="us" data-en="real-time, in the moment">real-time, в моменте</div></div>
+    <div class="cmp-row"><div class="param" data-en="Hallucination risk">Риск галлюцинаций</div><div class="old" data-en="high">высокий</div><div class="us" data-en="minimized by formulas">минимизирован формулами</div></div>
+    <div class="cmp-row"><div class="param" data-en="Analytics">Аналитика</div><div class="old" data-en="fragmented">разрозненная</div><div class="us" data-en="closed loop per message">замкнутый цикл по каждой коммуникации</div></div>
+    <div class="cmp-row"><div class="param" data-en="Launch">Запуск</div><div class="old" data-en="months of integration">месяцы интеграции</div><div class="us" data-en="a working model in days-weeks">рабочая модель за дни-недели</div></div>
+  </div>
+</section>
+
+<!-- REAL-TIME -->
+<section id="realtime" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Real-time">Real-time</span>
+    <h2 data-en="Right player, right moment, right offer">Нужный игрок, нужный момент, нужный оффер</h2>
+  </div>
+  <div class="live-wrap">
+    <div class="live-card reveal">
+      <div class="live-head"><span class="dot"></span><span data-en="Playing right now">В игре прямо сейчас</span><span class="t" data-en="updated 12 sec ago">обновлено 12 сек назад</span></div>
+      <div class="live-id">
+        <div class="live-av">48</div>
+        <div><div class="live-name" data-en="Player #48213">Игрок #48213</div><div class="live-sub" data-en="45th deposit · GEO: KZ">45-й депозит · GEO: KZ</div></div>
+        <span class="live-badge" data-en="VIP candidate">VIP-кандидат</span>
+      </div>
+      <div class="live-grid">
+        <div><span data-en="Last bet">Последняя ставка</span><b data-en="18 min ago">18 мин назад</b></div>
+        <div><span data-en="Spins this session">Спинов в сессии</span><b>6</b></div>
+        <div><span data-en="Session balance">Баланс сессии</span><b style="color:var(--amber-deep)">-$240</b></div>
+        <div><span data-en="Churn risk">Риск оттока</span><b style="color:var(--amber-deep)" data-en="High">Высокий</b></div>
+      </div>
+      <div class="live-rec">
+        <div class="rh" data-en="Model recommendation">Рекомендация модели</div>
+        <p data-en="The player is down and losing momentum - time for a 15% cashback. Probability of a 2nd deposit today: 75%.">Игрок в минусе и теряет темп - момент для кешбэка 15%. Вероятность 2-го депозита сегодня: 75%.</p>
+        <button class="btn btn-amber" type="button" data-en="Approve and send">Утвердить и отправить</button>
+      </div>
+    </div>
+    <div class="live-points reveal">
+      <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg></span><div><h3 data-en="A live feed of hot players">Лента «горячих» игроков</h3><p data-en="The most valuable players losing right now, sorted by priority.">Самые ценные, кто сливает прямо сейчас, отсортированы по приоритету.</p></div></div>
+      <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/></svg></span><div><h3 data-en="An offer at the right moment">Оффер в правильный момент</h3><p data-en="Not 'tomorrow by cohort', but now - while the player is on site.">Не «завтра по когорте», а сейчас - пока игрок на сайте.</p></div></div>
+      <div class="row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 5-5"/></svg></span><div><h3 data-en="Action in one click">Действие в один клик</h3><p data-en="Approve and send the offer straight from the profile - no exports.">Утвердить и отправить оффер прямо из карточки - без выгрузок.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REGULATED / RG -->
+<section id="regulated" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Regulations &amp; RG">Регуляции и RG</span>
+    <h2 data-en="Growth in regulated markets, without the risk">Рост в регулируемых рынках, без рисков</h2>
+    <p class="lead" data-en="Every market has its own rules. We build them into the model, so retention never fights compliance.">У каждого рынка свои правила. Закладываем их в модель, чтобы ретеншн не воевал с комплаенсом.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="pillar reveal"><div class="n" data-en="Responsible gaming">Ответственная игра</div><h3 data-en="RG markers in the model">Маркеры RG в модели</h3><p data-en="The model reads markers of harmful play and pulls such a player out of incentive campaigns in real time.">Модель видит признаки проблемной игры и в реальном времени исключает такого игрока из стимулирующих кампаний.</p></div>
+    <div class="pillar reveal"><div class="n" data-en="Per jurisdiction">Под юрисдикцию</div><h3 data-en="Rules configured per market">Правила под рынок</h3><p data-en="Limits, contact frequency and allowed offers are set per market and enforced automatically.">Лимиты, частота контактов и разрешённые офферы настраиваются под рынок и соблюдаются автоматически.</p></div>
+    <div class="pillar reveal"><div class="n" data-en="Auditable">Прозрачность</div><h3 data-en="Explainable decisions">Объяснимые решения</h3><p data-en="Every decision is explainable - why this player, why this offer - which keeps audits and regulators calm.">Каждое решение объяснимо - почему этот игрок и почему этот оффер - удобно для аудита и регулятора.</p></div>
+  </div>
+</section>
+
+<!-- OUTCOMES (honest) -->
+<section class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="What it changes">Что это меняет</span>
+    <h2 data-en="Where the money leaks today">Где сегодня утекают деньги</h2>
+    <p class="lead" data-en="These are the costs of doing retention by hand and by cohort. Retivo attacks exactly these.">Это цена ручного и когортного ретеншена. Retivo бьёт именно по ним.</p>
+  </div>
+  <div class="out">
+    <div class="ocard reveal"><div class="big">$30-50K<span style="font-size:16px;color:var(--muted)">/мес</span></div><h3 data-en="Manual retention team">Ручная retention-команда</h3><p data-en="And decisions are still made by gut feel.">И всё равно решения - на глаз.</p></div>
+    <div class="ocard reveal"><div class="big">5-7<span style="font-size:16px;color:var(--muted)"> мес</span></div><h3 data-en="Fragile payback">Хрупкий payback</h3><p data-en="One wrong offer breaks payback and the unit economics.">Одна ошибка с оффером ломает payback и юнит-экономику.</p></div>
+    <div class="ocard reveal"><div class="big">80-90%</div><h3 data-en="Profit from 5-10% of players">Профита от 5-10% игроков</h3><p data-en="Who exactly drives it is visible only per player.">Кто именно приносит - видно только по игроку.</p></div>
+  </div>
+  <p class="note" data-en="Your own numbers - retention lift, payback, bonus savings - we measure on a pilot with your data. We don't promise borrowed metrics.">Ваши цифры - рост retention, payback, экономия на бонусах - считаем в пилоте на ваших данных. Не обещаем чужих метрик.</p>
+</section>
+
+<!-- METHOD (honest proof) -->
+<section id="method" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Proof, not promises">Доказательство, а не обещание</span>
+    <h2 data-en="How we measure the lift">Как мы считаем эффект</h2>
+    <p class="lead" data-en="We don't borrow someone else's percentages. We measure the lift on your data against a holdout group.">Мы не берём чужие проценты. Считаем эффект на ваших данных против контрольной группы.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="step reveal"><div class="n">1</div><h3 data-en="Holdout group">Контрольная группа</h3><p data-en="Part of your players stays untouched. The gap in their behavior is the clean effect, not a coincidence.">Часть игроков не трогаем. Разница в их поведении - чистый эффект, а не совпадение.</p></div>
+    <div class="step reveal"><div class="n">2</div><h3 data-en="Your operator metrics">Метрики оператора</h3><p data-en="Retention, repeat deposits, NGR and bonus savings - counted on your data, not on a demo dataset.">Retention, повторные депозиты, NGR и экономия на бонусах - на ваших данных, а не на демо.</p></div>
+    <div class="step reveal"><div class="n">3</div><h3 data-en="A report you can recheck">Отчёт, который можно перепроверить</h3><p data-en="What we did, to whom and with what result - numbers you can verify inside your own system.">Что сделали, кому и с каким результатом - цифры можно перепроверить в вашей же системе.</p></div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS (honest) -->
+<section class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Integration &amp; data">Интеграция и данные</span>
+    <h2 data-en="Launch in days, not months">Запуск за дни, а не месяцы</h2>
+    <p class="lead" data-en="We connect via API - a few tables are enough. Data protection is built in.">Подключаемся по API - достаточно нескольких таблиц. Защита данных заложена в продукт.</p>
+  </div>
+  <div class="integ">
+    <div class="icard reveal"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m8 17-5-5 5-5"/><path d="m16 7 5 5-5 5"/><path d="m13 4-2 16"/></svg></span><span data-en="Minimal data">Минимум данных</span></h3><p data-en="A light API connection to a few platform and payment tables - launch in days.">Лёгкое подключение по API к нескольким таблицам платформы и платежей - запуск за дни.</p></div>
+    <div class="icard reveal"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2.2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg></span><span data-en="Security">Безопасность</span></h3><p data-en="Encryption, access control and flexible deployment for your requirements.">Шифрование, разграничение доступа и гибкое развёртывание под ваши требования.</p></div>
+    <div class="icard reveal"><h3><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2.5 7 5-14 2.5 7H21"/></svg></span><span data-en="Real-time">Real-time</span></h3><p data-en="A live database connection - the dashboard shows the current picture, not yesterday's export.">Подключение к базе в реальном времени - дашборд показывает актуальную картину, не вчерашнюю выгрузку.</p></div>
+  </div>
+</section>
+
+<!-- PILOT (instead of testimonials) -->
+<section id="pilot" class="wrap">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-en="Instead of borrowed quotes">Вместо чужих отзывов</span>
+    <h2 data-en="A pilot, not a pitch">Пилот, а не презентация</h2>
+    <p class="lead" data-en="We're young and honest about it: instead of testimonials we show the effect on your data in a few weeks.">Мы молодые и честно об этом говорим: вместо отзывов показываем эффект на ваших данных за несколько недель.</p>
+  </div>
+  <div class="grid grid-3">
+    <div class="step reveal"><div class="when" data-en="Week 1">Неделя 1</div><h3 data-en="Connect">Подключение</h3><p data-en="A light API connection to a few tables. We assemble the unified player profile.">Лёгкое подключение по API к нескольким таблицам. Собираем единую карточку игрока.</p></div>
+    <div class="step reveal"><div class="when" data-en="Weeks 2-3">Недели 2-3</div><h3 data-en="Run with a holdout">Запуск с холдаутом</h3><p data-en="The model scores players; we run decisions on part of the base and keep a control group.">Модель скорит игроков; запускаем решения на части базы и держим контрольную группу.</p></div>
+    <div class="step reveal"><div class="when" data-en="Result">Итог</div><h3 data-en="Clean uplift">Чистый uplift</h3><p data-en="We compare holdout vs treated, show the clean lift, and decide on rollout together.">Сравниваем holdout и обработанных, показываем чистый прирост и вместе решаем о раскатке.</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="wrap">
+  <div class="sec-head center reveal">
+    <span class="eyebrow" data-en="FAQ">FAQ</span>
+    <h2 data-en="Frequently asked">Частые вопросы</h2>
+  </div>
+  <div class="faq">
+    <div class="qa reveal"><button class="qa-q"><span data-en="How are you better than mass blasts?">Чем вы лучше массовых рассылок?</span><span class="sign">+</span></button><div class="qa-a"><p data-en="They work by cohorts. We decide per player: who to retain and who to reactivate. The value is in the scoring, not the sending.">Они работают по когортам. Мы решаем по каждому игроку: кого удерживать и кого реактивировать. Ценность - в скоринге, а не в самой отправке.</p></div></div>
+    <div class="qa reveal"><button class="qa-q"><span data-en="AI hallucinates and will break payback.">AI же галлюцинирует и сломает payback.</span><span class="sign">+</span></button><div class="qa-a"><p data-en="There's no LLM in decision-making. The core is ML plus agents overseeing agents. LLM is used only at the edges, for copy.">В принятии решений нет LLM. Ядро - ML, плюс агенты контролируют агентов. LLM используется только по краям, для текстов.</p></div></div>
+    <div class="qa reveal"><button class="qa-q"><span data-en="We already have a retention team.">У нас уже есть retention-команда.</span><span class="sign">+</span></button><div class="qa-a"><p data-en="We strengthen it: we highlight who to work with now and cut manual analysis. We don't replace people - we improve accuracy.">Мы её усиливаем: подсвечиваем, с кем работать сейчас, и сокращаем ручной разбор. Не заменяем людей - повышаем точность.</p></div></div>
+    <div class="qa reveal"><button class="qa-q"><span data-en="How secure is our data?">Насколько безопасны наши данные?</span><span class="sign">+</span></button><div class="qa-a"><p data-en="Encryption, access control and flexible deployment for your requirements. API integration takes days.">Шифрование, разграничение доступа и гибкие варианты развёртывания под ваши требования. Интеграция по API занимает дни.</p></div></div>
+  </div>
+</section>
+
+<!-- DEMO CTA -->
+<section id="demo" class="wrap">
+  <div class="cta-band reveal">
+    <h2 data-en="See it on your data">Покажем на ваших данных</h2>
+    <p data-en="A live 20-minute demo - from the player profile to a ready decision. Then a pilot with your metrics.">Живое демо за 20 минут - от карточки игрока до готового решения. Дальше - пилот с вашими метриками.</p>
+    <a href="#" data-cta class="btn btn-amber btn-lg" data-en="Book a demo">Записаться на демо</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="9" fill="#16130E"/><path d="M11.5 23.8A9 9 0 1 1 20.5 23.8" fill="none" stroke="#F5F2EE" stroke-width="2.6" stroke-linecap="round"/><circle cx="16" cy="7" r="2.4" fill="#F4A300"/></svg></span><span data-brand>Retivo</span></a>
+        <p data-en="AI-native retention CRM for casino. A decision per player, on ML - not LLM.">AI-native retention-CRM для casino. Решение по каждому игроку на ML, а не LLM.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Product">Продукт</h4>
+        <a href="#modules" data-en="Modules">Модули</a>
+        <a href="#product" data-en="Capabilities">Возможности</a>
+        <a href="#realtime" data-en="Real-time">Real-time</a>
+        <a href="#regulated" data-en="Regulations">Регуляции</a>
+        <a href="#method" data-en="How we measure">Как считаем эффект</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Company">Контакт</h4>
+        <a href="#demo" data-cta data-en="Book a demo">Записаться на демо</a>
+        <a data-tg href="https://t.me/Moneylong001" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="year">2026</span> <span data-brand>Retivo</span>. <span data-en="Draft version - not for publishing.">Черновик - не для публикации.</span></div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a href="#demo" data-cta class="btn btn-amber" data-en="Book a demo">Записаться на демо</a></div>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var cfg = window.SITE_CONFIG || {};
+  if(cfg.brand){ document.querySelectorAll('[data-brand]').forEach(function(el){ el.textContent = cfg.brand; }); }
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(!el.hasAttribute('data-ru')) el.setAttribute('data-ru', el.innerHTML);
+      var v = (lang==='en') ? el.getAttribute('data-en') : el.getAttribute('data-ru');
+      if(v!=null) el.innerHTML = v;
+    });
+    document.querySelectorAll('.lang-switch button').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang')===lang); });
+    try{ localStorage.setItem('rv2Lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); }); });
+  var sv='ru'; try{ sv=localStorage.getItem('rv2Lang')||'ru'; }catch(e){}
+  setLang(sv);
+
+  var burger=document.getElementById('burger'), menu=document.getElementById('mobileMenu');
+  if(burger) burger.addEventListener('click', function(){ menu.classList.toggle('open'); });
+  if(menu) menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.remove('open'); }); });
+
+  document.querySelectorAll('.qa-q').forEach(function(q){
+    q.setAttribute('aria-expanded','false');
+    q.addEventListener('click', function(){
+      var item=q.parentElement, ans=item.querySelector('.qa-a'), open=item.classList.contains('open');
+      document.querySelectorAll('.qa.open').forEach(function(o){ o.classList.remove('open'); o.querySelector('.qa-a').style.maxHeight=null; var b=o.querySelector('.qa-q'); if(b)b.setAttribute('aria-expanded','false'); });
+      if(!open){ item.classList.add('open'); ans.style.maxHeight=ans.scrollHeight+'px'; q.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  var rev=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:0.08, rootMargin:'0px 0px -5% 0px'});
+    rev.forEach(function(el){ io.observe(el); });
+    window.addEventListener('load', function(){ setTimeout(function(){ rev.forEach(function(el){el.classList.add('in');}); }, 2000); });
+  } else { rev.forEach(function(el){el.classList.add('in');}); }
+
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+  if(cfg.telegram){
+    document.querySelectorAll('[data-tg]').forEach(function(a){ a.href='https://t.me/'+cfg.telegram; });
+    document.querySelectorAll('a[data-cta]').forEach(function(a){ a.href='https://t.me/'+cfg.telegram; a.target='_blank'; a.rel='noopener'; });
+  }
+})();
+</script>
+</body>
+</html>

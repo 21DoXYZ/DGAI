@@ -1,6 +1,7 @@
 {
   "rewrites": [
-    { "source": "/dev", "destination": "/dev.html" }
+    { "source": "/dev", "destination": "/dev.html" },
+    { "source": "/v2", "destination": "/v2.html" }
   ],
   "redirects": [
     { "source": "/studio", "destination": "/dev", "permanent": true },
